@@ -92,6 +92,7 @@ img {
   -ms-grid-row-align: center;
   align-items: center; }
   .classy-navbar .nav-brand {
+    height:175px;
     font-size: 26px;
     font-weight: 500;
     color: #565656;
@@ -137,7 +138,8 @@ img {
   font-style: normal; }
 .icon-classy-nav-down-arrow {
   font-family: 'classyfonts';
-  speak: none;
+  /* speak: none; */  
+  /* sandy  */
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
