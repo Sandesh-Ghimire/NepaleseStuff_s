@@ -1,11 +1,11 @@
-(function ($) {
+(function($) {
     'use strict';
 
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
-    browserWindow.on('load', function () {
-        $('.preloader').fadeOut('slow', function () {
+    browserWindow.on('load', function() {
+        $('.preloader').fadeOut('slow', function() {
             $(this).remove();
         });
     });
@@ -16,14 +16,14 @@
     }
 
     // :: 3.0 Newsticker Active Code
-    if ($.fn.simpleTicker) {
-        $.simpleTicker($("#breakingNewsTicker"), {
-            speed: 1000,
-            delay: 3000,
-            easing: 'swing',
-            effectType: 'roll'
-        });
-    }
+    // if ($.fn.simpleTicker) {
+    //     $.simpleTicker($("#breakingNewsTicker"), {
+    //         speed: 1000,
+    //         delay: 3000,
+    //         easing: 'swing',
+    //         effectType: 'roll'
+    //     });
+    // }
 
     // :: 4.0 Sliders Active Code
     if ($.fn.owlCarousel) {
@@ -45,28 +45,28 @@
             animateOut: 'fadeOut'
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+        welcomeSlide.on('translate.owl.carousel', function() {
             var slideLayer = $("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        welcomeSlide.on('translated.owl.carousel', function () {
+        welcomeSlide.on('translated.owl.carousel', function() {
             var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(function() {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(function() {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
@@ -92,7 +92,7 @@
             }
         });
     }
-    
+
     // :: 5.0 Video Active Code
     if ($.fn.magnificPopup) {
         $('.video-btn').magnificPopup({
@@ -159,7 +159,7 @@
     }
 
     // :: 10.0 Prevent Default a Click
-    $('a[href="#"]').on('click', function ($) {
+    $('a[href="#"]').on('click', function($) {
         $.preventDefault();
     });
 

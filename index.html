@@ -9,7 +9,13 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Newsbox - Modern Magazine &amp; Newspaper HTML Template</title>
+    <title>Nepalese Stuff</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <!-- Favicon -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -35,9 +41,9 @@
         <!-- Navbar Area -->
         <div class="newsbox-main-menu">
             <div class="classy-nav-container breakpoint-off">
-                <div class="container-fluid">
+                <div class="container-fluid header_area">
                     <!-- Menu -->
-                    <nav class="classy-navbar justify-content-between" id="newsboxNav">
+                    <nav class="nav classy-navbar justify-content-between" id="newsboxNav">
 
                         <!-- Nav brand -->
                         <a href="index.html" class="nav-brand"><img src="img/core-img/logo.png" alt=""></a>
@@ -58,10 +64,23 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li><a href="#">International</a>
+                                    <li id="main-nav">
+                                        <div>
+                                            <ul>
+                                                <li><a href="#" class="givePipeLine">Home</a></li>
+                                                <li>|</li>
+                                                <li><a href="#" class="givePipeLine">Contact</a></li>
+                                                <li>|</li>
+                                                <li><a href="#">About</a></li>
+                                                <li>|</li>
+                                                <li><a href="#">Discussion</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a href="#">Places</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
-                                                <li class="title">Europe</li>
+                                                <li class="title">Tourist Destination</li>
                                                 <li><a href="#">United Kingdom</a></li>
                                                 <li><a href="#">Germany</a></li>
                                                 <li><a href="#">Latvia</a></li>
@@ -124,31 +143,51 @@
                                         </ul>
                                     </li>
                                     <li><a href="#">Lifestyle</a></li>
+                                    <li id="search-li">
+                                        <form method="post" id="search-form">
+                                            <input type="text" class="textbox" placeholder="Search...">
+                                            <button type="submit" class="btn" id="search-btn">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <div class="navbar-nav action-buttons ml-auto">
+                                            <i class="fa-solid fa-circle-user nav-item nav-link" data-toggle="dropdown" id="profile-icon"></i>
+                                            <div class="dropdown-menu login-form">
+                                                <form method="post">
+                                                    <div class="form-group">
+                                                        <label>Username</label>
+                                                        <input type="text" class="form-control" required="required">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="clearfix">
+                                                            <label>Password</label>
+                                                            <a href="#" class="float-right text-muted hover-underline-animation"><small>Forgot?</small></a>
+                                                        </div>
+                                                        <input type="password" class="form-control" required="required">
+                                                    </div>
+                                                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
+                                <!-- Nav End -->
 
-                                <!-- Header Add Area -->
-                                <div class="header-add-area">
-                                    <a href="#">
-                                       <img src="img/bg-img/add.png" alt="">
-                                    </a>
-                                </div>
                             </div>
-                            <!-- Nav End -->
-
-                        </div>
                     </nav>
+                    </div>
                 </div>
             </div>
-        </div>
     </header>
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Breaking News Area Start ##### -->
-    <section class="breaking-news-area">
+    <!-- <section class="breaking-news-area">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <!-- Breaking News Widget -->
                     <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
                         <div class="title">
                             <h6>Trending</h6>
@@ -164,7 +203,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- ##### Breaking News Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
@@ -191,7 +230,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-12 col-md-6">
                             <!-- Single Blog Post Area -->
                             <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
@@ -243,7 +282,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-12 col-md-6">
                             <!-- Single Blog Post Area -->
                             <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
@@ -1155,13 +1194,15 @@
                             <a href="#" data-toggle="tooltip" data-placement="top" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </div>
 
-                        <p class="mb-15">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec tincidunt viverra elit, sed consectetur est pr etium ac. Mauris nec mauris tellus. </p>
+                        <p class="mb-15">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh laoreet iaculis. Proin ac urna at lectus volutpat lobortis. Vestibulum venenatis iaculis diam vitae lobortis. Donec
+                            tincidunt viverra elit, sed consectetur est pr etium ac. Mauris nec mauris tellus. </p>
 
                         <!-- Copywrite Text -->
                         <p class="copywrite-text"><a href="#">
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1180,6 +1221,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 </body>
 
 </html>
