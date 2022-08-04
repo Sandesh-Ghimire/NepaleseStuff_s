@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logonepal.png">
+    <link rel="icon" href="img/logo.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -36,6 +36,19 @@
         </div>
     </div>
 
+    <!-- Main Nav -->
+    <div id="main-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>|</li>
+            <li><a href="#">Contact</a></li>
+            <li>|</li>
+            <li><a href="#">About</a></li>
+            <li>|</li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <!-- Navbar Area -->
@@ -46,7 +59,7 @@
                     <nav class="nav classy-navbar justify-content-between" id="newsboxNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand"><img src="img/logonepal.png" alt=""></a>
+                        <a href="index.html" class="nav-brand"><img src="img/logo.png" alt="logo" title="Nepalese Stuff" id="logo"></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -64,17 +77,20 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li id="main-nav">
-                                        <div>
-                                            <ul>
-                                                <li><a href="#" class="givePipeLine">Home</a></li>
-                                                <li>|</li>
-                                                <li><a href="#" class="givePipeLine">Contact</a></li>
-                                                <li>|</li>
-                                                <li><a href="#">About</a></li>
-                                                <li>|</li>
-                                                <li><a href="#">Discussion</a></li>
-                                            </ul>
+                                    <li>
+                                        <!-- Main Nav Mobile View -->
+                                        <div id="main-nav-mob">
+                                            <center>
+                                                <ul>
+                                                    <li><a href="#">Home</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">Contact</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">About</a></li>
+                                                    <li>|</li>
+                                                    <li><a href="#">FAQ</a></li>
+                                                </ul>
+                                            </center>
                                         </div>
                                     </li>
                                     <li><a href="#">Places</a>
@@ -153,7 +169,7 @@
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user nav-item nav-link" data-toggle="dropdown" id="profile-icon"></i>
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
                                             <div class="dropdown-menu login-form">
                                                 <form method="post">
                                                     <div class="form-group">
@@ -167,7 +183,9 @@
                                                         </div>
                                                         <input type="password" class="form-control" required="required">
                                                     </div>
-                                                    <input type="submit" class="btn btn-primary btn-block" value="Login">
+
+                                                    <button type="button" class="btn btn-primary reg-btn"><a href="#" class="text-light">Sign Up</a></button>
+                                                    <button type="submit" class="btn btn-danger reg-btn"><a name="" class="text-light">Login</a></button>
                                                 </form>
                                             </div>
                                         </div>
