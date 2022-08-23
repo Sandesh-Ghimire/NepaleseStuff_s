@@ -20,7 +20,7 @@
 
 .contact .info i {
     font-size: 32px;
-    color: #009961;
+    color: #ff3666;
     float: left;
     line-height: 1;
 }
@@ -122,7 +122,7 @@
 
 .contact .email-form input:focus,
 .contact .email-form textarea:focus {
-    border-color: #009961;
+    border-color: #ff3666;
 }
 
 .contact .email-form input {
@@ -135,7 +135,7 @@
 
 .contact .email-form button[type="submit"] {
     font-size: 20px;
-    background: #009961;
+    background: #ff3666;
     border: 0;
     padding: 10px 30px;
     color: #fff;
