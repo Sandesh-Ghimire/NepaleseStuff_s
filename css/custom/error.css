@@ -1,0 +1,29 @@
+#error-container {
+    margin-top: -89px !important;
+    padding: -89px !important;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.error-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.error-content h1 {
+    font-size: 3em;
+    display: inline-block;
+    padding-right: 12px;
+    animation: type .3s alternate infinite;
+}
+
+@keyframes type {
+    from {
+        box-shadow: inset -3px 0px 0px #888;
+    }
+    to {
+        box-shadow: inset -3px 0px 0px transparent;
+    }
+}

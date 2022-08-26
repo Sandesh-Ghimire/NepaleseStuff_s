@@ -6723,6 +6723,13 @@ img {
 /* ===== Nepalese Stuff ===== */
 
 
+/* General */
+
+.setCursorPointer {
+    cursor: pointer !important;
+}
+
+
 /* Navbar */
 
 header {
