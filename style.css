@@ -6961,6 +6961,20 @@ header {
 }
 
 
+/* Horizontal Scroll Bar Ends Here */
+
+
+/* Thumbnail */
+
+.thumbnail-big {
+    width: 100%;
+    max-height: 210px !important;
+}
+
+
+/* Thumbnail Ends Here */
+
+
 /* Footer */
 
 footer {
