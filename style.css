@@ -21,9 +21,14 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 body {
     font-family: "Raleway", sans-serif;
     font-size: 14px;
+    background-color: white;
 }
 
 h1,
@@ -940,7 +945,7 @@ img {
 }
 
 .single-blog-post.style-2 .blog-thumbnail {
-    margin-bottom: 20px;
+    margin-bottom: 8px !important;
 }
 
 .single-blog-post.style-2 .blog-thumbnail img {
@@ -953,6 +958,7 @@ img {
 }
 
 .single-blog-post.style-2 .blog-content .post-date {
+    display: inline;
     font-size: 12px;
     color: #636363;
     margin-bottom: 10px;
@@ -962,7 +968,7 @@ img {
     display: block;
     font-weight: 600;
     font-size: 22px;
-    margin-bottom: 10px;
+    margin: 8px auto;
     color: #232323;
 }
 
@@ -972,7 +978,8 @@ img {
 }
 
 .single-blog-post.style-2 .blog-content .post-author {
-    display: block;
+    display: inline !important;
+    float: right;
     font-size: 12px;
     color: #636363;
     font-weight: 500;
@@ -6815,17 +6822,18 @@ header {
     margin: 0;
     outline: 0;
     height: 37px;
-    padding: 0 0 0 16px;
+    padding: 0 0 0 17px;
     background-color: rgba(255, 255, 255, 0.8);
-    color: #212121;
+    color: black;
     border: 0;
     border-radius: 21px !important;
 }
 
 #search-btn {
     border-radius: 50%;
-    background-color: #404040;
-    color: white;
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
 }
 
 .single-widget-area {
@@ -6837,7 +6845,7 @@ header {
     position: relative;
     font-size: 38px;
     cursor: pointer;
-    color: #404040;
+    color: black;
     top: 10px;
     margin-left: 8px;
 }
@@ -6876,11 +6884,11 @@ header {
     }
     #search-form .textbox {
         width: 234px;
-        padding-right: 55px;
+        padding-right: 44px;
     }
     #search-btn {
         position: absolute;
-        right: 65px;
+        right: 70px;
     }
     .login-form {
         position: absolute;
@@ -6921,12 +6929,12 @@ header {
     }
     #search-form .textbox {
         width: 220px !important;
-        padding-left: 13px;
-        padding-right: 34px;
+        padding-left: 17px;
+        padding-right: 23px;
     }
     #search-btn {
         position: absolute;
-        right: 0px;
+        right: 3px;
         top: 0px;
     }
     #search-li {

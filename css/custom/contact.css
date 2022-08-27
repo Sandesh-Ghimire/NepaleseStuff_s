@@ -8,21 +8,19 @@
     padding: auto 0 !important;
 }
 
-.contact .section-title {
-    margin: auto 0 !important;
-    padding: auto 0 !important;
-}
-
 .contact .info {
     width: 100%;
     background: #fff;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
 .contact .info i {
     font-size: 32px;
-    color: #ff3666;
+    color: black;
     float: left;
     line-height: 1;
+    margin-top: 5px;
 }
 
 .contact .info h4 {
@@ -45,6 +43,42 @@
     margin-top: 40px;
 }
 
+@media screen and (min-width: 992px) {
+    .social_profile {
+        display: inline;
+        float: right;
+        margin-top: 13px;
+    }
+    .section-title h1 {
+        display: inline;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .social_profile {
+        display: block;
+        text-align: center;
+    }
+    .section-title h1 {
+        text-align: center !important;
+    }
+}
+
+.social_profile ul {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.social_profile ul li {
+    display: inline;
+    text-decoration: none;
+}
+
+.social_profile ul li a i {
+    font-size: 34px;
+    margin: auto 8px;
+}
+
 .contact .email-form {
     width: 100%;
     background: #fff;
@@ -53,64 +87,6 @@
 .contact .email-form .form-group {
     padding-bottom: 8px;
 }
-
-
-/*   
-  .contact .php-email-form .validate {
-    display: none;
-    color: red;
-    margin: 0 0 15px 0;
-    font-weight: 400;
-    font-size: 13px;
-  } */
-
-
-/* .contact .php-email-form .error-message {
-    display: none;
-    color: #fff;
-    background: #ed3c0d;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-  }
-   */
-
-
-/* .contact .php-email-form .sent-message {
-    display: none;
-    color: #fff;
-    background: #18d26e;
-    text-align: left;
-    padding: 15px;
-    font-weight: 600;
-  }
-   */
-
-
-/* .contact .php-email-form .sent-message br + br {
-    margin-top: 25px;
-  }
-  
-  .contact .php-email-form .loading {
-    display: none;
-    background: #fff;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  .contact .php-email-form .loading:before {
-    content: "";
-    display: inline-block;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin: 0 10px -6px 0;
-    border: 3px solid #18d26e;
-    border-top-color: #eee;
-    -webkit-animation: animate-loading 1s linear infinite;
-    animation: animate-loading 1s linear infinite;
-  }
-   */
 
 .contact .email-form input,
 .contact .email-form textarea {
@@ -122,7 +98,7 @@
 
 .contact .email-form input:focus,
 .contact .email-form textarea:focus {
-    border-color: #ff3666;
+    border-color: #ef1b48;
 }
 
 .contact .email-form input {
@@ -134,21 +110,18 @@
 }
 
 .contact .email-form button[type="submit"] {
-    font-size: 20px;
-    background: #ff3666;
+    font-size: 16px;
+    background: #ef1b48;
     border: 0;
-    padding: 10px 30px;
+    padding: 8px 34px;
     color: #fff;
-    transition: 0.4s;
-    border-radius: 50px;
+    transition: 0.3s;
+    border-radius: 55px;
+    float: right;
 }
 
 .contact .email-form button[type="submit"]:hover {
     background: #00b371;
-}
-
-.map {
-    margin-top: 30px;
 }
 
 @-webkit-keyframes animate-loading {
@@ -167,145 +140,4 @@
     100% {
         transform: rotate(360deg);
     }
-}
-
-
-/* 
-h2{
-  color:gray;
-  font-family:sans-serif;
-}
-.middle {
-    margin-top: 40px;
-	position: relative;
-	top: 50%;
-	
-	width: 100%;
-    text-align: center;
-    border:0;
-	border-radius: 50px;
-}
-
-.btn {
-	display: inline-block;
-	width: 40px;
-	height: 40px;
-	background-color: transparent;
-    margin: 10px;
-    margin-bottom: 40px;
- 
-	box-shadow: 0 5px 15px -5px #00000070;
-	color: #3498db;
-	overflow: hidden;
-	position: relative;
-}
-
-.btn i {
-	line-height: 30px;
-	font-size: 20px;
-	transition: 0.2 linear;
-} */
-
-
-/* .btn::before{
-content: "";
-position: absolute;
-width: 120%;
-height: 120%;
-background-color: #3498db;
-transform: rotate(45deg);
-left: -110%;
-top: 90%;
-}
-.btn:hover::before{
-	animation: aaa 0.7s 1;
-	top: -10%;
-	left: -10%;
-}
-.youtube:hover::before{
-	background: red;
-}
-.facebook:hover::before{
-	background: #3b5999;
-}
-.instagram:hover::before{
-	background: #e4405f;
-}
-.google:hover::before {
-	background: #dd4b39;
-}
-
-@keyframes aaa {
-	0%{
-		left: -110%;
-		top: 90%;
-	}
-	50%{
-		left: 10%;
-		top: -30%
-	}
-	100%{
-		top: -10%;
-		left: -10%;
-	}
-} */
-
-
-/*START SOCIAL PROFILE CSS*/
-
-.social_profile {
-    position: absolute;
-    margin-top: -300px;
-    /* margin-left: -89px !important; */
-    text-align: center;
-}
-
-.social_profile ul {
-    list-style: outside none none;
-    position: absolute;
-    text-align: center;
-    background-color: white;
-}
-
-
-/* 
-.social_profile ul li{
-    float:left;
-} */
-
-.social_profile ul li a {
-    text-align: center;
-    border: 0px;
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    margin: 0px 5px;
-    font-size: 18px;
-    color: black;
-    border-radius: 30px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    display: block;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-@media only screen and (max-width:768px) {
-    .social_profile ul li a {
-        display: none;
-    }
-}
-
-@media only screen and (max-width:480px) {
-    .social_profile ul li a {
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-    }
-}
-
-.social_profile ul li a:hover {
-    background: #ff3666;
-    border: 1px solid #ff3666;
-    color: #fff;
-    border: 0px;
 }
