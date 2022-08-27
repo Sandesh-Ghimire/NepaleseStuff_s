@@ -61,6 +61,16 @@
     }
     .section-title h1 {
         text-align: center !important;
+        margin-bottom: 13px;
+    }
+    .section-title h1::after {
+        content: " ";
+        display: block;
+        width: 89px;
+        height: 2px;
+        background-color: #ef1b48;
+        margin: auto;
+        margin-bottom: 21px;
     }
 }
 

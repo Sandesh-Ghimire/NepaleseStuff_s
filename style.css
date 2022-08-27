@@ -6965,6 +6965,18 @@ header {
     }
 }
 
+@media only screen and (max-width:480px) {
+    #lower-nav .intro-news-filter {
+        height: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #lower-nav .intro-news-filter h6 {
+        display: none;
+    }
+}
+
 
 /* Navbar Ends Here */
 
