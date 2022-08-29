@@ -1320,28 +1320,42 @@ img {
     display: flex;
     text-align: center;
     align-items: center;
-    vertical-align: middle;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    border-radius: 8px;
     margin-bottom: 34px;
+    padding: 8px;
 }
 
-.single-widget-area.stat-widget div {
-    padding: 21px 13px;
+.single-widget-area.stat-widget .stat-container {
+    text-align: center;
+    height: 121px;
+    width: 127px;
+    padding-top: 34px;
+    border-radius: 8px;
+    background-color: white;
 }
 
-.single-widget-area.stat-widget div p {
+.single-widget-area.stat-widget .stat-container:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.3s;
+}
+
+.single-widget-area .stat-widget .stat-container:hover>.single-widget-area .stat-widget .stat-container p {
+    color: white !important;
+}
+
+.single-widget-area.stat-widget .stat-container-top {
+    margin-bottom: 13px;
+}
+
+.single-widget-area.stat-widget .stat-container p {
     font-size: 16px;
     color: #000000;
 }
 
-.single-widget-area.stat-widget div i {
+.single-widget-area.stat-widget .stat-container i {
     font-size: 27px;
     color: black;
-}
-
-.single-widget-area .stat-widget {
-    height: 345px;
-    margin-bottom: 44px;
 }
 
 #ad-widget {
