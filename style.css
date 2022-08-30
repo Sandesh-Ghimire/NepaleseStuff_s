@@ -1224,10 +1224,11 @@ img {
     /* background-color: white; */
 }
 
-.single-widget-area.stat-widget .stat-container:hover {
+
+/* .single-widget-area.stat-widget .stat-container:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transition: 0.3s;
-}
+} */
 
 .single-widget-area .stat-widget .stat-container:hover>.single-widget-area .stat-widget .stat-container p {
     color: white !important;
