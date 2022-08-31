@@ -39,13 +39,13 @@
     <!-- Main Nav -->
     <div id="main-nav">
         <ul>
-            <li><a onclick="getDynamicContent('dashboard.html')" class="setCursorPointer">Home</a></li>
+            <li><a onclick="getDynamicContent('dashboard.php')" class="setCursorPointer">Home</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('about.html')" class="setCursorPointer">About</a></li>
+            <li><a onclick="getDynamicContent('about.php')" class="setCursorPointer">About</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('contact.html')" class="setCursorPointer">Contact</a></li>
+            <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('faq.html')" class="setCursorPointer">FAQ</a></li>
+            <li><a onclick="getDynamicContent('faq.php')" class="setCursorPointer">FAQ</a></li>
         </ul>
     </div>
 
@@ -59,7 +59,7 @@
                     <nav class="nav classy-navbar justify-content-between" id="newsboxNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html"><img src="img/logo.png" alt="logo" title="Nepalese Stuff" id="logo"></a>
+                        <a href="index.php"><img src="img/logo.png" alt="logo" title="Nepalese Stuff" id="logo"></a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -82,13 +82,13 @@
                                         <div id="main-nav-mob">
                                             <center>
                                                 <ul>
-                                                    <li><a onclick="getDynamicContent('dashboard.html')" class="setCursorPointer">Home</a></li>
+                                                    <li><a onclick="getDynamicContent('dashboard.php')" class="setCursorPointer">Home</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('about.html')" class="setCursorPointer">About</a></li>
+                                                    <li><a onclick="getDynamicContent('about.php')" class="setCursorPointer">About</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('contact.html')" class="setCursorPointer">Contact</a></li>
+                                                    <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('faq.html')" class="setCursorPointer">FAQ</a></li>
+                                                    <li><a onclick="getDynamicContent('faq.php')" class="setCursorPointer">FAQ</a></li>
                                                 </ul>
                                             </center>
                                         </div>
@@ -167,11 +167,11 @@
                                     <!-- <li><a href="#">History</a>
                                 <ul class="dropdown">
                                     <center>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="catagory.html">Catagory</a></li>
-                                        <li><a href="single-post.html">Single Post</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="elements.html">Elements</a></li>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a href="catagory.php">Catagory</a></li>
+                                        <li><a href="single-post.php">Single Post</a></li>
+                                        <li><a href="contact.php">Contact</a></li>
+                                        <li><a href="elements.php">Elements</a></li>
                                     </center>
                                 </ul>
                             </li> -->
@@ -338,10 +338,10 @@
                 </div>
                 <ul class="footer-cat-links">
                     <li><br></li>
-                    <li><a href="index.html"><span>Home</span></a></li>
-                    <li><a href="about.html"><span>About</span></a></li>
-                    <li><a href="contact.html"><span>Contact</span></a></li>
-                    <li><a href="faq.html"><span>FAQ</span></a></li>
+                    <li><a href="index.php"><span>Home</span></a></li>
+                    <li><a href="about.php"><span>About</span></a></li>
+                    <li><a href="contact.php"><span>Contact</span></a></li>
+                    <li><a href="faq.php"><span>FAQ</span></a></li>
                     <li><br></li>
                 </ul>
             </div>
@@ -386,7 +386,7 @@
         // Initially Load Content as Dashboard
         let flag = true;
         if (flag == true) {
-            getDynamicContent('dashboard.html');
+            getDynamicContent('dashboard.php');
             flag = false;
         }
 
@@ -409,7 +409,7 @@
 
         // In case of error while processing any request
         function errorHandler(contentLink) {
-            $('#dynamic-content').load('error.html')
+            $('#dynamic-content').load('error.php')
         }
     </script>
 
