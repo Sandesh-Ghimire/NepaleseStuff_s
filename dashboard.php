@@ -637,7 +637,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/7.png" alt="" class="thumbnail-big"></a>
+                        <a href="#"><img src="img/thumbnail/thumbnail5.jpg" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->

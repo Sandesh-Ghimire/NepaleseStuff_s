@@ -391,6 +391,11 @@
             flag = false;
         }
 
+        // In case of error while processing any request
+        function errorHandler(contentLink) {
+            getDynamicContent('error.php');
+        }
+
         // Change Content (event: 'click')
         function getDynamicContent(contentLink) {
             fetch(contentLink, {
@@ -406,11 +411,6 @@
                 }).catch(err => {
                     errorHandler(contentLink)
                 });
-        }
-
-        // In case of error while processing any request
-        function errorHandler(contentLink) {
-            $('#dynamic-content').load('error.php')
         }
     </script>
 

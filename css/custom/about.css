@@ -1,10 +1,4 @@
-/*
-*
-* ==========================================
-* FOR DEMO PURPOSES
-* ==========================================
-*
-*/
+/* About Us */
 
 .social-link {
     width: 30px;
@@ -17,12 +11,11 @@
     border-radius: 50%;
     transition: all 0.3s;
     font-size: 0.9rem;
-  }
-  
-  .social-link:hover,
-  .social-link:focus {
+}
+
+.social-link:hover,
+.social-link:focus {
     background: #ddd;
     text-decoration: none;
     color: #555;
-  }
-  
+}
