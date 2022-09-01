@@ -1,3 +1,7 @@
+<?php
+    include "functions/dashboard.php";
+?>
+
 <!-- ##### Intro News Area Start ##### -->
 <div class="intro-news-area">
     <div class="container-fluid" style="padding: 0 6%;">
@@ -181,148 +185,150 @@
                             <div class="row">
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/4.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">June 20, 2022</span>
+                                            <span class="post-date">Jan 20, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">A Complete DIY Nepal Travel Guide for planning your trip.</a>
+                                            <a href="#" class="post-title">Nepal: 8th Wonder of the World</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/5.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">Jan 10, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Sandesh Ghimire</span></span>
-                                            <a href="#" class="post-title">8 Hotels in Kathmandu Best for a Relaxing Holiday in 2022</a>
+                                            <span class="post-date">June 24, 2022</span>
+                                            <span class="post-author ">- <span class="value ">Admin</span></span>
+                                            <a href="#" class="post-title">Kathmandu: The City of Temples</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">Oct 20, 2021</span>
-                                            <span class="post-author ">- <span class="value ">Niraj Giri</span></span>
-                                            <a href="#" class="post-title">Guide to Trekking in Nepal with 6 Best Expeditions</a>
+                                            <span class="post-date">Oct 10, 2021</span>
+                                            <span class="post-author ">- <span class="value ">Admin</span></span>
+                                            <a href="#" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Minimized Blog -->
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/16.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                <div class="row mt-4">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/17.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2022</span>
+                                                <a href="#" class="post-title">Explore Nepal</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/18.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/19.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">Jan 27, 2019</span>
+                                                <a href="#" class="post-title">Feel the thrill</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/20.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">Feb 2, 2021</span>
+                                                <a href="#" class="post-title">Himalayas</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/21.jpg" alt="thumbnail" class="thumbnail-small"></a>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">March 21, 2018</span>
+                                                <a href="#" class="post-title">Greenary</a>
+                                            </div>
                                         </div>
+                                    </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2022</span>
+                                                <a href="#" class="post-title">Top highest peaks</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nepalese Culture</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -330,152 +336,154 @@
                         </div>
 
                         <!-- nav-3 -->
-                        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav3">
+                        <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav2">
                             <div class="row">
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/6.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
+                                            <span class="post-date">Jan 20, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">page1 Musk: Tesla worker admitted to sabotage</a>
+                                            <a href="#" class="post-title">Nepal: 8th Wonder of the World</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/7.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
+                                            <span class="post-date">June 24, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                            <a href="#" class="post-title">Kathmandu: The City of Temples</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2 mb-4">
+                                    <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/7.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
+                                            <span class="post-date">Oct 10, 2021</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                            <a href="#" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Minimized Blog -->
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/16.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                <div class="row mt-4">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/17.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2022</span>
+                                                <a href="#" class="post-title">Explore Nepal</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/18.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/19.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">Jan 27, 2019</span>
+                                                <a href="#" class="post-title">Feel the thrill</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/20.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                        </div>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">Feb 2, 2021</span>
+                                                <a href="#" class="post-title">Himalayas</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post d-flex style-4 mb-3">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/bg-img/21.jpg" alt="thumbnail" class="thumbnail-small"></a>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">March 21, 2018</span>
+                                                <a href="#" class="post-title">Greenary</a>
+                                            </div>
                                         </div>
+                                    </div>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 20, 2018</span>
-                                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2022</span>
+                                                <a href="#" class="post-title">Top highest peaks</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                        <div class="single-blog-post d-flex style-4">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.png" alt="thumbnail" class="thumbnail-small"></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nepalese Culture</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -490,31 +498,37 @@
             <div class="col-12 col-lg-3">
                 <div class="sidebar-area">
                     <div class="row">
-
-
-
-
                         <!-- Newsletter Widget -->
                         <div class="col-12 col-sm-6 col-lg-12">
                             <div class="single-widget-area stat-widget">
                                 <div class="left-stat">
                                     <div class="stat-container stat-container-top">
                                         <i class="fa-solid fa-file"></i>
-                                        <p class="mt-1"><span class="num-value" id="value-one">1500</span>+ Blogs</p>
+                                        <p class="mt-1"><span class="num-value" id="value-one">
+                                            <?php echo $numOfBlogs ?>
+                                        </span>+ Blogs</p>
                                     </div>
                                     <div class="stat-container stat-container-bottom">
                                         <i class="fa-solid fa-clock"></i>
-                                        <p class="mt-1"><span class="num-value" id="value-two">3</span>+ Years</p>
+                                        <p class="mt-1">
+                                            <span class="num-value" id="value-two">
+                                                <?php echo $yearsOfExperience ?>
+                                            </span>+ Years</p>
                                     </div>
                                 </div>
                                 <div class="right-stat">
                                     <div class="stat-container stat-container-top">
                                         <i class="fa-solid fa-user"></i>
-                                        <p class="mt-1"><span class="num-value" id="value-three">100</span>+ Users</p>
+                                        <p class="mt-1"><span class="num-value" id="value-three">
+                                            <?php echo $numOfUsers ?>
+                                        </span>+ Users</p>
                                     </div>
                                     <div class="stat-container stat-container-bottom">
                                         <i class="fa-solid fa-handshake"></i>
-                                        <p class="mt-1"><span class="num-value" id="value-four">20</span>+ Partners</p>
+                                        <p class="mt-1">
+                                            <span class="num-value" id="value-four">
+                                            <?php echo $numOfPartners ?>
+                                            </span>+ Partners</p>
                                     </div>
                                 </div>
                             </div>
@@ -572,7 +586,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/5.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/5.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -589,7 +603,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/6.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/6.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -606,7 +620,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/4.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/4.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -623,7 +637,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/7.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/7.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -640,7 +654,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/8.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/8.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -657,7 +671,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -674,7 +688,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
@@ -691,7 +705,7 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt=""></a>
+                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->

@@ -12,7 +12,6 @@
 @import url(css/owl.carousel.min.css);
 @import url(css/animate.css);
 @import url(css/magnific-popup.css);
-@import url(css/font-awesome.min.css);
 
 /* :: 3.0 Base CSS */
 
@@ -1202,7 +1201,8 @@ img {
 
 .single-widget-area.stat-widget {
     /* background-color: #f0f4f8; */
-    height: 275px;
+    /* height: 275px; */
+    height: 248px;
     width: 100%;
     display: flex;
     text-align: center;
@@ -1249,7 +1249,8 @@ img {
 }
 
 #ad-widget {
-    max-height: 210px !important;
+    /* max-height: 210px !important; */
+    height: 248px;
     width: 100%;
     overflow: hidden;
     border-radius: 8px;
@@ -1757,91 +1758,6 @@ img {
 }
 
 
-/* :: 11.0 Contact Area CSS */
-
-.contact-content {
-    position: relative;
-    z-index: 2;
-}
-
-.contact-content .contact-social-info a {
-    display: inline-block;
-    margin-right: 20px;
-    font-size: 14px;
-    color: #000000;
-}
-
-.contact-content .contact-social-info a:hover,
-.contact-content .contact-social-info a:focus {
-    color: #ef1b48;
-}
-
-.contact-content .single-contact-info {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.contact-content .single-contact-info:last-child {
-    margin-bottom: 0;
-}
-
-.contact-content .single-contact-info p {
-    font-size: 15px;
-    margin-bottom: 0;
-}
-
-.contact-content .single-contact-info .icon {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 25px;
-    flex: 0 0 25px;
-    max-width: 25px;
-    width: 25px;
-}
-
-.contact-form-area .form-control {
-    position: relative;
-    z-index: 2;
-    height: 54px;
-    width: 100%;
-    background-color: #f0f4f8;
-    font-size: 12px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 0;
-    padding: 15px 30px;
-    font-weight: 500;
-    color: #aeaeae;
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.contact-form-area .form-control:focus {
-    box-shadow: none;
-}
-
-.contact-form-area textarea.form-control {
-    height: 250px;
-}
-
-.map-area {
-    position: relative;
-    z-index: 2;
-}
-
-.map-area iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
-    margin-bottom: 0;
-}
-
-@media only screen and (max-width: 767px) {
-    .map-area iframe {
-        height: 300px;
-    }
-}
-
-
 /* :: 12.0 Elements Area CSS */
 
 .elements-title {
@@ -2344,6 +2260,136 @@ header {
         align-items: center;
     }
 }
+
+
+/* Registration Starts Here */
+
+.hero {
+    height: 100%;
+    width: 100%;
+}
+
+.form-box {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    border-radius: 3px;
+}
+
+.button-box {
+    width: 220px;
+    margin: 34px auto;
+    position: relative;
+    border-radius: 30px;
+    transition: 0.5s;
+    background-color: #04347c;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: #fff;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background-color: #f53838;
+    border-radius: 50px;
+    transition: .5s;
+}
+
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 35px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.check-box {
+    margin: 30px 3px 30px 0;
+}
+
+label {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+}
+
+.submit-btn {
+    width: 89%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background-color: #f53838;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}
+
+.top-bar {
+    height: 50px;
+    background-color: #04347c;
+}
+
+.top-bar i {
+    color: white;
+    font-size: 34px;
+    margin-top: 8px;
+}
+
+#footer a {
+    font-size: 34px !important;
+}
+
+
+/* Registration End Here */
 
 
 /* Navbar Ends Here */

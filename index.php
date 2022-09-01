@@ -12,7 +12,6 @@
     <title>Nepalese Stuff</title>
 
     <!-- Bootstrap -->
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -44,13 +43,7 @@
             <li>|</li>
             <li><a onclick="getDynamicContent('about.php')" class="setCursorPointer">About</a></li>
             <li>|</li>
-            <!-- <li><a href="about.php">About</a>
-            </li>
-            <li>|</li> -->
-
             <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
-           
-
             <li>|</li>
             <li><a onclick="getDynamicContent('faq.php')" class="setCursorPointer">FAQ</a></li>
         </ul>
@@ -262,13 +255,14 @@
                                         <form method="post" id="search-form">
                                             <input type="text" class="textbox" placeholder="Search...">
                                             <button type="submit" class="btn" id="search-btn">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </button>
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </button>
                                         </form>
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i>
+                                            <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
                                             <div class="dropdown-menu login-form">
                                                 <form method="post">
                                                     <div class="form-group">
@@ -286,7 +280,7 @@
                                                     <button type="button" class="btn btn-primary reg-btn"><a href="#" class="text-light">Sign Up</a></button>
                                                     <button type="submit" class="btn btn-danger reg-btn"><a name="" class="text-light">Login</a></button>
                                                 </form>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </li>
                                 </ul>
