@@ -336,7 +336,7 @@
                         </div>
 
                         <!-- nav-3 -->
-                        <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav2">
+                        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav2">
                             <div class="row">
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">
@@ -428,7 +428,7 @@
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                                <a href="#"><img src="img/bg-img/latest2.jpg" alt="thumbnail" class="thumbnail-small"></a>
                                             </div>
 
                                             <!-- Blog Content -->
