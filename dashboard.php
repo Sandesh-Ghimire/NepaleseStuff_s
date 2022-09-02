@@ -688,14 +688,14 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
+                        <a href="#"><img src="img/bg-img/latest2.jpg" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <span class="post-date">Sep 2, 2022</span>
                         <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Mardi Himal Trekking in Nepal</a>
+                        <a href="#" class="post-title">Nepali Climbers Make ‘History’ with First-ever K2 Winter Summit!</a>
                     </div>
                 </div>
             </div>
@@ -705,14 +705,14 @@
                 <div class="single-blog-post style-2 mb-5">
                     <!-- Blog Thumbnail -->
                     <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
+                        <a href="#"><img src="img/bg-img/ancient.jpg" alt="" class="thumbnail-big"></a>
                     </div>
 
                     <!-- Blog Content -->
                     <div class="blog-content">
                         <span class="post-date">Sep 2, 2022</span>
                         <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Mardi Himal Trekking in Nepal</a>
+                        <a href="#" class="post-title">Ancient Nepal and its culture.</a>
                     </div>
                 </div>
             </div>
