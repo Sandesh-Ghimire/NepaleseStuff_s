@@ -188,14 +188,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/latest1.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Jan 20, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Nepal: 8th Wonder of the World</a>
+                                            <a href="#" class="post-title">10 New Tourist Destinations in Nepal</a>
                                         </div>
                                     </div>
                                 </div>
@@ -205,14 +205,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/latest3.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">June 24, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Kathmandu: The City of Temples</a>
+                                            <a href="#" class="post-title"> Nepal Reopens Bardiya National Park for Tourists! </a>
                                         </div>
                                     </div>
                                 </div>
@@ -222,14 +222,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/ancient.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Oct 10, 2021</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
+                                            <a href="#" class="post-title">Ancient Nepal and its culture.</a>
                                         </div>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Explore Nepal</a>
+                                                <a href="#" class="post-title">Explore Pokhara</a>
                                             </div>
                                         </div>
                                     </div>
@@ -343,14 +343,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/latest2.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Jan 20, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Nepal: 8th Wonder of the World</a>
+                                            <a href="#" class="post-title">Nepali Climbers Make ‘History’ with First-ever K2 Winter Summit! </a>
                                         </div>
                                     </div>
                                 </div>
@@ -360,14 +360,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/latest3.png" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">June 24, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Kathmandu: The City of Temples</a>
+                                            <a href="#" class="post-title"> Nepali Government Incurs NPR 11.4 Billion in Arrears in FY 2019/20.</a>
                                         </div>
                                     </div>
                                 </div>
@@ -593,7 +593,7 @@
                     <div class="blog-content">
                         <span class="post-date">June 20, 2022</span>
                         <span class="post-author ">- <span class="value ">Admin</span></span>
-                        <a href="#" class="post-title">6 Days Trip To Nepal From Mumbai Gave Us An Enthralling Experience Of A Lifetime!</a>
+                        <a href="#" class="post-title">7 Days Trip To Nepal From Mumbai Gave Us An Enthralling Experience Of A Lifetime!</a>
                     </div>
                 </div>
             </div>
