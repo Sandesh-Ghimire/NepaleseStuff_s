@@ -377,14 +377,14 @@
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a href="#"><img src="img/thumbnail/thumbnail6.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Oct 10, 2021</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
+                                            <a href="#" class="post-title">Rolpa: Remote Place of Nepal</a>
                                         </div>
                                     </div>
                                 </div>
