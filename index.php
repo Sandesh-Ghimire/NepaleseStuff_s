@@ -1,3 +1,8 @@
+<?php
+    include "functions/connect.php";
+    require_once "functions/variables.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <!-- Favicon -->
     <link rel="icon" href="img/logo.png">
@@ -45,7 +50,7 @@
             <li>|</li>
             <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('faq.php')" class="setCursorPointer">FAQ</a></li>
+            <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">Forum</a></li>
         </ul>
     </div>
 
@@ -88,11 +93,12 @@
                                                     <li>|</li>
                                                     <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('faq.php')" class="setCursorPointer">FAQ</a></li>
+                                                    <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">FAQ</a></li>
                                                 </ul>
                                             </center>
                                         </div>
                                     </li>
+                                    <li><a onclick="getDynamicContent('demo.php')" style="cursor: pointer;">Demo</a></li>
                                     <li><a href="#">Places</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
@@ -261,7 +267,8 @@
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i>
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="redirect('signUpIn.php')"></i>
+                                            <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i> -->
                                             <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
                                             <div class="dropdown-menu login-form">
                                                 <form method="post">
@@ -299,73 +306,92 @@
     <div id="dynamic-content"></div>
 
     <!-- ##### Footer Area Start ##### -->
-    <footer>
-        <div class="row">
-            <div class="col-3 ftr-col-3">
-                <div class="link-cat" onclick="footerToggle(this)">
-                    <span class="footer-toggle"></span>
-                    <span class="footer-cat">Nepalese Stuff</span>
+    <footer id="footer" class="text-white d-flex-column pt-5">
+        <!--Footer Links-->
+        <div class="container-fluid pb-2" style="padding: 0 6%;">
+            <div class="row">
+            <!--First column-->
+            <div class="col-lg-3 mx-auto shfooter text-center">
+                <h5 class="my-2 font-weight-bold d-none d-lg-block">Nepalese Stuff</h5>
+                <div class="d-lg-none title" data-target="#nepaleseStuff" data-toggle="collapse">
+                    <div class="my-2 font-weight-bold">Nepalese Stuff
+                        <div class="float-right navbar-toggler">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
+                    </div>
                 </div>
-                <ul class="footer-cat-links" style="width: 80%; pointer-events: none;">
-                    <li><br></li>
-                    <li>
-                        <a href="#" style="text-align: justify;">
-                            Nepalese Stuff is a blog website dedicated for easy access of reliable information about Nepal.
-                        </a>
-                    </li>
-                    <li><br></li>
+                <div class="collapse" id="nepaleseStuff">
+                    <p>Nepalese Stuff is a dedicated platform for accessing information about stuffs related to Nepal. The website is an attempt to introduce Nepal in the global arena.</p>
+                </div>
+            </div>
+            <!--/.First column-->
+            <hr class="clearfix w-100 d-lg-none mb-0">
+            <!--Second column-->
+            <div class="col-lg-3 mx-auto shfooter text-center">
+                <h5 class="my-2 font-weight-bold d-none d-lg-block">Useful Links</h5>
+                <div class="d-lg-none title" data-target="#usefulLinks" data-toggle="collapse">
+                <div class="my-2 font-weight-bold">Useful Links
+                    <div class="float-right navbar-toggler">
+                    <i class="fas fa-angle-down"></i>
+                    <i class="fas fa-angle-up"></i>
+                    </div>
+                </div>
+                </div>
+                <ul class="list-unstyled collapse" id="usefulLinks">
+                <li><a class="setCursorPointer" onclick="getDynamicContent('dashboard.php')">Home&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a class="setCursorPointer" onclick="getDynamicContent('about.php')">About&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a class="setCursorPointer" onclick="getDynamicContent('contact.php')">Contact&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <li><a class="setCursorPointer" onclick="getDynamicContent('forum.php')">Forum&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 </ul>
             </div>
-
-            <div class="col-3 ftr-col-3">
-                <div class="link-cat" onclick="footerToggle(this)">
-                    <span class="footer-toggle"></span>
-                    <span class="footer-cat">Services</span>
+            <!--/.Second column-->
+            <hr class="clearfix w-100 d-lg-none mb-0">
+            <!--Third column-->
+            <div class="col-lg-3 mx-auto shfooter text-center">
+                <h5 class="my-2 font-weight-bold d-none d-lg-block">Join Us</h5>
+                <div class="d-lg-none title" data-target="#joinUs" data-toggle="collapse">
+                <div class="my-2 font-weight-bold">Join Us
+                    <div class="float-right navbar-toggler">
+                    <i class="fas fa-angle-down"></i>
+                    <i class="fas fa-angle-up"></i>
+                    </div>
                 </div>
-                <ul class="footer-cat-links" style="cursor: context-menu;">
-                    <li><br></li>
-                    <li><a name=""><span>Service1</span></a></li>
-                    <li><a name=""><span>Service2</span></a></li>
-                    <li><a name=""><span>Service3</span></a></li>
-                    <li><a name=""><span>Service4</span></a></li>
-                    <li><br></li>
+                </div>
+                <ul class="list-unstyled collapse" id="joinUs">
+                <li><a target="_blank" href="#"><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;Twitter</a></li>
+                <li><a target="_blank" href="#"><i class="fa-brands fa-facebook-f"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</a></li>
+                <li><a target="_blank" href="#"><i class="fa-brands fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;Instagram</a></li>
+                <li><a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i>&nbsp;&nbsp;&nbsp;&nbsp;LinkedIn</a></li>
+                
                 </ul>
             </div>
-
-            <div class="col-3 ftr-col-3">
-                <div class="link-cat" onclick="footerToggle(this)">
-                    <span class="footer-toggle"></span>
-                    <span class="footer-cat">Quick Links</span>
+            <!--/.Third column-->
+            <hr class="clearfix w-100 d-lg-none mb-0">
+            <!--Fourth column-->
+            <div class="col-lg-3 mx-auto shfooter text-center">
+                <h5 class="my-2 font-weight-bold d-none d-lg-block">Get Help</h5>
+                <div class="d-lg-none title" data-target="#Get-Help" data-toggle="collapse">
+                <div class="my-2 font-weight-bold">Get Help
+                    <div class="float-right navbar-toggler">
+                    <i class="fas fa-angle-down"></i>
+                    <i class="fas fa-angle-up"></i>
+                    </div>
                 </div>
-                <ul class="footer-cat-links">
-                    <li><br></li>
-                    <li><a href="index.php"><span>Home</span></a></li>
-                    <li><a href="about.php"><span>About</span></a></li>
-                    <li><a href="contact.php"><span>Contact</span></a></li>
-                    <li><a href="faq.php"><span>FAQ</span></a></li>
-                    <li><br></li>
+                </div>
+                <ul class="list-unstyled collapse" id="Get-Help">
+                    <li><i class="fa-solid fa-phone"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $contactNumber ?></li>
+                    <li><i class="fa-solid fa-location-dot"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $location ?></li>
+                    <li><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $emailAddress ?></li>
                 </ul>
             </div>
-
-            <div class="col-3 ftr-col-3">
-                <div class="link-cat" onclick="footerToggle(this)">
-                    <span class="footer-toggle"></span>
-                    <span class="footer-cat">Contact Us</span>
-                </div>
-                <ul class="footer-cat-links">
-                    <li><br></li>
-                    <li><i class="fa fa-phone"></i><a name="">980-0000-0000</a></li>
-                    <li><i class="fa fa-facebook"></i><a href="https://www.facebook.com/epsnepal4" target="_blank">nepalesestuff</a></li>
-                    <li><i class="fa fa-map-marker"></i><a name="">Kathmandu, Nepal</a></li>
-                    <li><br></li>
-                </ul>
+            <!--/.Fourth column-->
             </div>
         </div>
-        <div id="copyright">
-            Copyright &copy; Nepalese Stuff
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
+        <!--/.Footer Links-->
+        <hr class="mb-0">
+        <div class="py-3 text-center">
+            Copyright © <script>document.write(new Date().getFullYear())</script> | Nepalese Stuff
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->
@@ -405,12 +431,19 @@
                     if (res.ok) {
                         $('#dynamic-content').load(contentLink);
                         // location.reload(false);
+                        // $('#scrollUp').trigger('click');
+
                     } else {
                         errorHandler(contentLink);
                     }
                 }).catch(err => {
                     errorHandler(contentLink)
                 });
+        }
+
+        // Redirect to another page
+        function redirect(pageLink) {
+            window.location.href = pageLink;
         }
     </script>
 

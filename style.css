@@ -53,8 +53,8 @@ p {
 a,
 a:hover,
 a:focus {
-    -webkit-transition-duration: 500ms;
-    transition-duration: 500ms;
+    /* -webkit-transition-duration: 300ms;
+    transition-duration: 300ms; */
     text-decoration: none;
     outline: 0 solid transparent;
     color: #000000;
@@ -2384,10 +2384,6 @@ label {
     margin-top: 8px;
 }
 
-#footer a {
-    font-size: 34px !important;
-}
-
 
 /* Registration End Here */
 
@@ -2426,245 +2422,110 @@ label {
 
 footer {
     background-color: #335364;
-    padding: 3em 4em 2em;
 }
 
-footer .row {
-    margin: 2em 0;
-    font-family: lato;
-    color: #fff;
-    position: relative;
-    border-bottom: 3px solid #cecece;
-    border-radius: 8px;
+footer h4,
+h5 {
+    color: white;
 }
 
-.footer-toggle {
-    display: none;
+footer li,
+a,
+p {
+    color: whitesmoke
 }
 
-.link-cat {
-    cursor: pointer;
+footer a:hover,
+footer a:visited,
+footer a:focus {
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: normal;
 }
 
-footer ul {
-    padding: 0;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+footer hr {
+    border-color: white;
+    height: 5px;
 }
 
 footer ul li {
-    list-style-type: none;
-    padding: 0;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    line-height: 2;
+    padding-left: 0 !important;
 }
 
-.footer-cat {
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 21px;
-    color: #fff;
+footer ul li a,
+footer ul li,
+footer p {
+    /* font-weight: normal; */
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.footer-cat-links li a span::before {
-    content: '- ';
-    /* color: whitesmoke; */
+.shfooter .collapse {
+    display: inherit;
 }
 
-.footer-cat-links li a {
-    color: whitesmoke !important;
-    text-decoration: none;
-    position: relative;
+@media only screen and (max-width:992px) {
+    .shfooter ul {
+        margin-bottom: 0;
+    }
+    .shfooter .collapse {
+        display: none;
+    }
+    .shfooter .collapse.show {
+        display: block;
+    }
+    .shfooter .title .fa-angle-up,
+    .shfooter .title[aria-expanded=true] .fa-angle-down {
+        display: none;
+    }
+    .shfooter .title[aria-expanded=true] .fa-angle-up {
+        display: block;
+    }
+    .shfooter .navbar-toggler {
+        display: inline-block;
+        padding: 0;
+    }
 }
 
-.footer-cat-links.active>li a {
-    pointer-events: auto;
-}
-
-.footer-cat-links a:after {
-    top: 21px;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    width: 0;
-    background: #fff;
-    -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-}
-
-.footer-cat-links a:hover:after,
-.footer-cat-links a:focus:after {
-    width: 100%;
-    left: 0;
-}
-
-.footer-cat-links li i {
-    color: #fff;
-    margin-right: 13px;
-}
-
-.footer-cat-links li span {
-    color: whitesmoke;
-}
-
-.ftr-col-3 {
-    display: inline-table;
-    width: 25%;
-}
-
-.social-2 {
-    display: none;
-}
-
-.social-links {
-    bottom: 44px;
-    position: absolute;
-    left: 0;
-}
-
-.social-links a:not(:last-child) {
-    margin-right: 10px;
-}
-
-.social-links a i {
+.resize {
     text-align: center;
-    font-size: 21px;
 }
 
-#copyright {
-    text-align: center !important;
-    color: #fff;
-    font-family: lato;
+.resize {
+    margin-top: 3rem;
+    font-size: 1.25rem;
 }
 
 
-/* iPads to Smartphone for Common Elements ----------- */
+/*RESIZESCREEN ANIMATION*/
 
-@media only screen and (max-width: 1024px) {
-    .ftr-col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-        position: relative;
+.fa-angle-double-right {
+    animation: rightanime 0.5s linear infinite;
+}
+
+.fa-angle-double-left {
+    animation: leftanime 0.5s linear infinite;
+}
+
+@keyframes rightanime {
+    50% {
+        transform: translateX(10px);
+        opacity: 0.5;
     }
-    footer .footer-cat {
-        margin-left: 25px;
-    }
-    .footer-toggle,
-    .footer-toggle::after {
-        background: #fff;
-        height: 2px;
-        width: 15px;
-        position: absolute;
-        display: block;
-        -webkit-transition: all .4s ease-in;
-        transition: all .4s ease-in;
-    }
-    .footer-toggle {
-        top: 11px;
-        cursor: pointer;
-    }
-    .footer-toggle::after {
-        content: '';
-        -webkit-transform: rotate(90deg);
-        transform: rotate(90deg);
-    }
-    .btnActive .footer-toggle::after {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    .footer-cat-links {
-        margin: 0 0em 0px 1.6em;
-    }
-    .footer-cat-links a {
-        pointer-events: none;
-    }
-    .footer-cat-links li {
-        line-height: 0;
+    100% {
+        transform: translateX(10px);
         opacity: 0;
     }
-    .footer-cat-links.active>li {
-        line-height: 2;
-        opacity: 1;
-    }
-    .social-1 {
-        display: none !important;
-    }
-    .social-2 {
-        display: block;
-        position: absolute;
-        top: 7.5em;
-        bottom: 0px;
-        height: 20px;
-        padding-bottom: 1.5em;
-        width: 100%;
-    }
 }
 
-
-/* iPads (portrait)----------- */
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-    footer {
-        padding-right: 3em;
-        padding-left: 3em;
+@keyframes leftanime {
+    50% {
+        transform: translateX(-10px);
+        opacity: 0.5;
     }
-    .ftr-col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-}
-
-
-/* iPads (landscape) ----------- */
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    section {
-        padding-bottom: 3em;
-    }
-    .sec-heading {
-        padding: 1em 0;
-    }
-    .ftr-col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-}
-
-
-/* Mini Tablet ----------- */
-
-@media only screen and (max-width: 600px) {
-    .ftr-col-3 {
-        display: block;
-        width: 100%;
-        padding-bottom: 1em;
-    }
-    .col-6 {
-        width: 100%;
-        display: block;
-    }
-    footer {
-        padding: 3em 2em 2em;
-    }
-}
-
-
-/* Smartphones (portrait and landscape) ----------- */
-
-@media only screen and (max-width: 480px) {
-    .col-6 {
-        width: 100%;
-        display: block;
-    }
-    footer {
-        padding-right: 1em;
-        padding-left: 1em;
+    100% {
+        transform: translateX(-10px);
+        opacity: 0;
     }
 }
 

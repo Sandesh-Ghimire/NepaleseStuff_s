@@ -1,22 +1,24 @@
 <link rel="stylesheet" href="css/custom/contact.css">
 
+<!-- <?php
+    include "functions/variables.php";
+?> -->
+
 <!-- ======= Contact Section ======= -->
 <section id="contact" class="contact">
-    <div class="container">
+
+    <div class="container mb-50">
 
         <div class="section-title">
             <h1>Contact Us</h1>
             <span class="social_profile">
                 <ul>
-                    <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-facebook text-dark"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-twitter text-dark"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-square-instagram text-dark"></i></a></li>
                 </ul>
             </span>
         </div>
-    </div>
-
-    <div class="container mb-50">
 
         <div class="row mt-5">
 
@@ -25,19 +27,19 @@
                     <div class="address">
                         <i class="fa-solid fa-location-dot"></i>
                         <h4>Location:</h4>
-                        <p>India,Rajkot 360003</p>
+                        <p><?php echo $location ?></p>
                     </div>
 
                     <div class="email">
                         <i class="fa-solid fa-envelope"></i>
                         <h4>Email:</h4>
-                        <p>info@nepalesestuff.com</p>
+                        <p><?php echo $emailAddress ?></p>
                     </div>
 
                     <div class="phone">
                         <i class="fa-solid fa-phone"></i>
                         <h4>Call:</h4>
-                        <p>9876543210</p>
+                        <p><?php echo $contactNumber ?></p>
                     </div>
 
                 </div>
