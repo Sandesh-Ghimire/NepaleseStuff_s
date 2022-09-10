@@ -267,7 +267,7 @@
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUpIn.php')"></i>
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUp.php')"></i>
                                             <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i> -->
                                             <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
                                             <div class="dropdown-menu login-form">
