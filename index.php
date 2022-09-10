@@ -267,7 +267,7 @@
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="redirect('signUpIn.php')"></i>
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUpIn.php')"></i>
                                             <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i> -->
                                             <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
                                             <div class="dropdown-menu login-form">
@@ -338,11 +338,11 @@
                     </div>
                 </div>
                 </div>
-                <ul class="list-unstyled collapse" id="usefulLinks">
-                <li><a class="setCursorPointer" onclick="getDynamicContent('dashboard.php')">Home&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                <li><a class="setCursorPointer" onclick="getDynamicContent('about.php')">About&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                <li><a class="setCursorPointer" onclick="getDynamicContent('contact.php')">Contact&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                <li><a class="setCursorPointer" onclick="getDynamicContent('forum.php')">Forum&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                <ul class="list-unstyled collapse" id="usefulLinks" style="margin-bottom: 13px;">
+                    <li><a class="setCursorPointer" onclick="getDynamicContent('dashboard.php')">Home&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a class="setCursorPointer" onclick="getDynamicContent('about.php')">About&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a class="setCursorPointer" onclick="getDynamicContent('contact.php')">Contact&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a class="setCursorPointer" onclick="getDynamicContent('forum.php')">Forum&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 </ul>
             </div>
             <!--/.Second column-->
@@ -351,19 +351,18 @@
             <div class="col-lg-3 mx-auto shfooter text-center">
                 <h5 class="my-2 font-weight-bold d-none d-lg-block">Join Us</h5>
                 <div class="d-lg-none title" data-target="#joinUs" data-toggle="collapse">
-                <div class="my-2 font-weight-bold">Join Us
-                    <div class="float-right navbar-toggler">
-                    <i class="fas fa-angle-down"></i>
-                    <i class="fas fa-angle-up"></i>
+                    <div class="my-2 font-weight-bold">Join Us
+                        <div class="float-right navbar-toggler">
+                            <i class="fas fa-angle-down"></i>
+                            <i class="fas fa-angle-up"></i>
+                        </div>
                     </div>
                 </div>
-                </div>
-                <ul class="list-unstyled collapse" id="joinUs">
-                <li><a target="_blank" href="#"><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;Twitter</a></li>
-                <li><a target="_blank" href="#"><i class="fa-brands fa-facebook-f"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</a></li>
-                <li><a target="_blank" href="#"><i class="fa-brands fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;Instagram</a></li>
-                <li><a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i>&nbsp;&nbsp;&nbsp;&nbsp;LinkedIn</a></li>
-                
+                <ul class="list-unstyled collapse" id="joinUs" style="margin-bottom: 13px;">
+                    <li><a target="_blank" href="#"><i class="fa-brands fa-twitter"></i>&nbsp;&nbsp;&nbsp;&nbsp;Twitter</a></li>
+                    <li><a target="_blank" href="#"><i class="fa-brands fa-facebook-f"></i>&nbsp;&nbsp;&nbsp;&nbsp;Facebook</a></li>
+                    <li><a target="_blank" href="#"><i class="fa-brands fa-instagram"></i>&nbsp;&nbsp;&nbsp;&nbsp;Instagram</a></li>
+                    <li><a target="_blank" href="#"><i class="fa-brands fa-linkedin-in"></i>&nbsp;&nbsp;&nbsp;&nbsp;LinkedIn</a></li>
                 </ul>
             </div>
             <!--/.Third column-->
@@ -405,47 +404,10 @@
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <!-- All Plugins js -->
     <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
+
+    <!-- Custom JS -->
     <script src="js/active.js"></script>
-
-    <!-- Script -->
-    <script>
-        // Initially Load Content as Dashboard
-        let flag = true;
-        if (flag == true) {
-            getDynamicContent('dashboard.php');
-            flag = false;
-        }
-
-        // In case of error while processing any request
-        function errorHandler(contentLink) {
-            getDynamicContent('error.php');
-        }
-
-        // Change Content (event: 'click')
-        function getDynamicContent(contentLink) {
-            fetch(contentLink, {
-                    method: 'HEAD'
-                })
-                .then(res => {
-                    if (res.ok) {
-                        $('#dynamic-content').load(contentLink);
-                        // location.reload(false);
-                        // $('#scrollUp').trigger('click');
-
-                    } else {
-                        errorHandler(contentLink);
-                    }
-                }).catch(err => {
-                    errorHandler(contentLink)
-                });
-        }
-
-        // Redirect to another page
-        function redirect(pageLink) {
-            window.location.href = pageLink;
-        }
-    </script>
+    <script src="js/control.js"></script>
 
 </body>
 

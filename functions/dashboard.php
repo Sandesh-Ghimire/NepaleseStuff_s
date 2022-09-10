@@ -14,4 +14,6 @@
     $latestContentArray = [];
     $trendingContentArray = [];
 
+    
+
 ?>

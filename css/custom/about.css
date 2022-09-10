@@ -1,5 +1,11 @@
 /* About Us */
 
+
+/* .udahddalm {
+    padding: 0 !important;
+    margin: 0 !important;
+} */
+
 .social-link {
     width: 30px;
     height: 30px;
@@ -18,4 +24,25 @@
     background: #ddd;
     text-decoration: none;
     color: #555;
+}
+
+@media only screen and (max-width: 576px) {
+    .about-single-item-text {
+        padding: 8px 8% 21px 8% !important;
+    }
+    .about-single-item-img {
+        padding: 13px 8% 8px 8% !important;
+    }
+    .about-single-item-middle-img {
+        padding: 34px 8% 34px 8% !important;
+    }
+    .container-fluid {
+        padding: 0 !important;
+    }
+    .about-card-header {
+        padding-top: 21px !important;
+    }
+    .about-card {
+        padding: auto 8% !important;
+    }
 }

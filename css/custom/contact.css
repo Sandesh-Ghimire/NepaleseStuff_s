@@ -130,7 +130,7 @@
 }
 
 .contact .email-form button[type="submit"]:hover {
-    background: #00b371;
+    background: #ef1b48 !important;
 }
 
 #map {
