@@ -14,10 +14,8 @@
                 <label for="inputPassword" class="form-label">Password</label>
                 <input type="password" class="form-control" id="inputPassword">
             </div>
-            <div class="col-12">
-                <label class="form-check-label" for="gridCheck">
-                    <u><b>Forgot Password</b> </u>
-                </label>
+            <div class="col-12 reg-frgt-pswd">
+                <u><b><a href="#">Forgot Password</a></b> </u>
             </div>
             <div class="col-12 text-center" style="margin-top: 34px;">
                 <button type="submit" class="nav-list-item-btn" onclick="validate">Sign In</button>
