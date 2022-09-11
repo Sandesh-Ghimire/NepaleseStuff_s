@@ -15,10 +15,6 @@
 
 /* :: 3.0 Base CSS */
 
-:root {
-    --color-blue: #04347c;
-}
-
 * {
     margin: 0;
     padding: 0;
