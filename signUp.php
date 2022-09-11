@@ -35,7 +35,7 @@
             </div>
         </form>
         <div class="regFooter">
-            <hr style="margin: -8px 0 0 0;">
+            <hr style="margin: -7px 0 0 0;">
             <div class="row">
                 <div class="col-5 text-center">
                     <a href="index.php" title="Go to homepage">Home</a>

@@ -18,14 +18,14 @@
                 <input type="password" class="form-control" id="inputPassword" required>
             </div>
             <div class="col-12 reg-frgt-pswd">
-                <u><b><a href="#">Forgot Password</a></b> </u>
+                <u><b><a href="#">Forgot Password</a></b></u>
             </div>
             <div class="col-12 text-center" style="margin-top: 34px;">
                 <button type="submit" class="nav-list-item-btn disable-element" id="submitBtn">Sign In</button>
             </div>
         </form>
         <div class="regFooter">
-            <hr style="margin: -8px 0 0 0;">
+            <hr style="margin: -7px 0 0 0;">
             <div class="row">
                 <div class="col-5 text-center">
                     <a href="index.php" title="Go to homepage">Home</a>
