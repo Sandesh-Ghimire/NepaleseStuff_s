@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-2"><p><b>/</b></p></div>
                 <div class="col-5 text-center">
-                    <a href="signIn.php" title="Login to your account" style="word-wrap: normal !important;">SignIn</a>
+                    <a href="signIn.php" title="Login to your account">SignIn</a>
                 </div>
             </div>
         </div>

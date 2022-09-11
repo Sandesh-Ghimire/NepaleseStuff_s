@@ -7,6 +7,21 @@
     height: 100vh;
 }
 
+#superMain hr {
+    border-color: black;
+    height: 5px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+#superMain form {
+    padding: 34px 55px 34px 55px;
+}
+
+#superMain label:not(.form-check-input,
+.form-check-label) {
+    font-size: 14px;
+}
+
 .form-wrapper {
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
     overflow: hidden;
@@ -40,13 +55,8 @@
     }
 }
 
-#superMain form {
-    padding: 34px 55px 34px 55px;
-}
-
-#superMain label:not(.form-check-input,
-.form-check-label) {
-    font-size: 14px;
+.form-check-label {
+    margin-top: 3px;
 }
 
 .regHeader {
@@ -55,8 +65,8 @@
     background-color: white;
 }
 
-.form-check-label {
-    margin-top: 3px;
+.regBtn:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .regFooter {
@@ -64,7 +74,6 @@
 }
 
 .regFooter .row {
-    /* background-color: #f0f4f8 !important; */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -79,29 +88,7 @@
     font-size: 12px;
 }
 
-
-/* .regFooter .row .col-5:hover a {
-    padding: 13px !important;
-    color: white !important;
-    font-weight: normal !important;
-}
-
-.regFooter .row .col-5:hover {
-    background-color: #ef1b48;
-} */
-
-.regFooter p,
 .regFooter a {
     color: black;
     margin: 0 auto;
-}
-
-#superMain hr {
-    border-color: black;
-    height: 5px;
-    box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
-}
-
-.regBtn:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
