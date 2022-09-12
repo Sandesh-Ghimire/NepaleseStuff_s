@@ -73,6 +73,10 @@
     background-color: #888;
 }
 
+.active-element {
+    outline: 2px solid green;
+}
+
 .regHeader {
     padding-top: 34px;
     height: 55px;
