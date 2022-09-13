@@ -1,17 +1,17 @@
 <?php 
 
-//     session_start();
-//     include("includes/db.php");
+    session_start();
+    include("includes/db.php");
     
-//     if(!isset($_SESSION['admin_email'])){
+    if(!isset($_SESSION['admin_email'])){
         
-//         echo "<script>window.open('login.php','_self')</script>";
+        echo "<script>window.open('login.php','_self')</script>";
         
-//     }else{
+    }else{
         
-//         $admin_session = $_SESSION['admin_email'];
+        $admin_session = $_SESSION['admin_email'];
         
-//     }
+       
 
 ?>
 
@@ -50,6 +50,7 @@
                         
                  } 
                 
+        
                 ?>
                 
             </div><!-- container-fluid finish -->
@@ -62,4 +63,4 @@
 </html>
 
 
-<?php  ?>
+<?php } ?>
