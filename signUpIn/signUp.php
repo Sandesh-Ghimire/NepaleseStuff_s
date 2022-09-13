@@ -24,7 +24,7 @@
         }
     }
     catch (Exception $e) {
-        echo "script>alert($e);</script>";
+        echo "script>alert($e);</>";
     }
 ?>
 
@@ -47,33 +47,38 @@
 <body>
     <!-- Content Starts Here -->
     <div id="superMain">
-        <div class="form-wrapper" style="height: 580px;">
+        <div class="form-wrapper">
             <div class="regHeader text-center">
                 <h4>Create your account</h4>
             </div>
             <form class="row g-3" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                 <div class="col-md-12">
-                    <label for="inputName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="inputName" name="username" required>
+                    <label for="inputName" class="form-label">Name&nbsp;</label>
+                    <span id="inputNameMsg" class="error-msg"></span>
+                    <input type="text" class="form-control" id="inputName" name="username">
                 </div>
                 <div class="col-md-12">
-                    <label for="inputEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" name="email" required>
+                    <label for="inputEmail" class="form-label">Email&nbsp;</label>
+                    <span id="inputEmailMsg" class="error-msg"></span>
+                    <input type="text" class="form-control" id="inputEmail" name="email">
                 </div>
                 <div class="col-md-12">
-                    <label for="inputPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword" name="pswd" required>
+                    <label for="inputPassword" class="form-label">Password&nbsp;</label>
+                    <span id="inputPswdMsg" class="error-msg"></span>
+                    <input type="password" class="form-control" id="inputPassword" name="pswd">
                 </div>
                 <div class="col-md-12">
-                    <label for="inputConfirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="inputConfirmPassword" name="pswd_c" required>
+                    <label for="inputConfirmPassword" class="form-label">Confirm Password&nbsp;</label>
+                    <span id="inputPswdCMsg" class="error-msg"></span>
+                    <input type="password" class="form-control" id="inputConfirmPassword" name="pswd_c">
                 </div>
                 <div class="col-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+                        <input class="form-check-input" type="checkbox" id="gridCheck" require>
                         <label class="form-check-label" for="gridCheck">
-                            I Agree to the <u><b><a href="termsAndConditions.php">Terms and Conditions</a></b></u>
+                            I Agree to the <u><b><a href="termsAndConditions.php">Terms and Conditions&nbsp;</a></b></u>
                         </label>
+                        <span id="checkMsg" class="error-msg"></span>
                     </div>
                 </div>
                 <div class="col-12 text-center" style="margin-top: 34px;">
@@ -81,8 +86,8 @@
                 </div>
             </form>
             <div class="regFooter">
-                <hr style="margin: -7px 0 0 0;">
-                <div class="row">
+                <hr style="margin: -8px 0 0 0;">
+                <div class="row mb-3 mt-1">
                     <div class="col-5 text-center">
                         <a href="../index.php" title="Go to homepage">Home</a>
                     </div>
@@ -97,28 +102,112 @@
 
     <script>
 
-        $(document).ready(()=>{
-            
-            $('#inputPassword, #inputConfirmPassword, #inputEmail, #inputName').on('keyup', ()=> {
-                validateClientSideInput();
-            });
+        "use strict";
 
-            $('#gridCheck').on('click', ()=> {
-                validateClientSideInput();
-            });
-
-            function validateClientSideInput() {
-                var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-                var elem = document.getElementById("submitBtn");
-                var ele = document.getElementsByTagName('input');
-                if($('#gridCheck').is(":checked") && $('#inputPassword').val()==$('#inputConfirmPassword').val() && pattern.test($('#inputEmail').val()) && $('#inputName').val().length>0){
-                    elem.classList.remove("disable-element");
-                    ele.classList.add("active-element");
-                } else {
-                    elem.classList.add("disable-element");
-                }
-            }
+        $('#inputName').on('keyup', ()=> {
+            setTimeout(checkUserName(), 1000);
         });
+
+        $('#inputEmail').on('keyup', ()=> {
+            setTimeout(checkEmail(), 1000);
+        });
+
+        $('#inputPassword').on('keyup', ()=> {
+            setTimeout(checkPswd(), 1000);
+        });
+
+        $('#inputConfirmPassword').on('keyup', ()=> {
+            setTimeout(checkConfirmPswd(), 1000);
+        });
+
+        $('#inputPassword, #inputConfirmPassword, #inputEmail, #inputName').on('keyup', ()=> {
+            finalValidation();
+        });
+
+        $('#gridCheck').on('click', () => {
+            finalValidation();
+        });
+
+        // Final Validation
+        function finalValidation() {
+            let pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+            if ($('#gridCheck').is(":checked") && $('#inputPassword').val().length>0 && $('#inputPassword').val()==$('#inputConfirmPassword').val() && pattern.test($('#inputEmail').val()) && $('#inputName').val().length>0){
+                document.getElementById("submitBtn").classList.remove("disable-element");
+            } else {
+                document.getElementById("submitBtn").classList.add("disable-element");
+            }
+        }
+
+        // Check Username Field
+        function checkUserName() {
+            let box =  document.getElementById('inputName');
+            if ($('#inputName').val().length>0) {
+                document.getElementById('inputNameMsg').innerText = '';
+                box.classList.add('is-valid-input');
+                box.classList.remove('is-invalid-input');
+            } else {
+                document.getElementById('inputNameMsg').innerText = '(Empty Name)';
+                box.classList.remove('is-valid-input');
+                box.classList.add('is-invalid-input');
+                return false;
+            }
+            return true;
+        }
+
+        // Check Email Field
+        function checkEmail() {
+            let pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+            let box = document.getElementById('inputEmail');
+            if (pattern.test($('#inputEmail').val())) {
+                document.getElementById('inputEmailMsg').innerText = '';
+                box.classList.add('is-valid-input');
+                box.classList.remove('is-invalid-input');
+            } else {
+                document.getElementById('inputEmailMsg').innerText = '(Invalid email)';
+                box.classList.remove('is-valid-input');
+                box.classList.add('is-invalid-input');
+                return false;
+            }
+            return true;
+        }
+
+        // Check Password Field
+        function checkPswd() {
+            let box = document.getElementById('inputPassword');
+            let pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+            if ($('#inputPassword').val().length==0) {
+                document.getElementById('inputPswdMsg').innerText = '(Empty Password)';
+                box.classList.remove('is-valid-input');
+                box.classList.add('is-invalid-input');
+                return false;
+            } else {
+                document.getElementById('inputPswdMsg').innerText = '';
+                box.classList.add('is-valid-input');
+                box.classList.remove('is-invalid-input');
+            }
+            return true;
+        }
+
+        // Check Confirm Password Field
+        function checkConfirmPswd() {
+            let box = document.getElementById('inputConfirmPassword');
+            if ($('#inputPassword').val()!=$('#inputConfirmPassword').val()) {
+                document.getElementById('inputPswdCMsg').innerText = '(Password mismatch)';
+                box.classList.remove('is-valid-input');
+                box.classList.add('is-invalid-input');
+                return false;
+            } else if ($('#inputConfirmPassword').val().length==0) {
+                document.getElementById('inputPswdCMsg').innerText = '(Empty Password)';
+                box.classList.remove('is-valid-input');
+                box.classList.add('is-invalid-input');
+                return false;
+            } else {
+                document.getElementById('inputPswdCMsg').innerText = '';
+                box.classList.add('is-valid-input');
+                box.classList.remove('is-invalid-input');
+            }
+            return true;
+        }
 
     </script>
 </body>

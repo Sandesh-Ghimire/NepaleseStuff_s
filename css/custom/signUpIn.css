@@ -67,14 +67,26 @@
     font-size: 12px;
 }
 
+.is-valid-input {
+    border-color: rgba(0, 255, 0, 0.8) !important;
+    box-shadow: rgba(0, 255, 0, 0.3) 0px 0px 3px !important;
+}
+
+.is-invalid-input {
+    border-color: rgba(255, 0, 0, 0.8)!important;
+    box-shadow: rgba(255, 0, 0, 0.3) 0px 0px 3px !important;
+}
+
 .disable-element {
     pointer-events: none;
     cursor: no-drop;
     background-color: #888;
 }
 
-.active-element {
-    outline: 2px solid green;
+.error-msg {
+    color: #ef1b48;
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
 
 .regHeader {
