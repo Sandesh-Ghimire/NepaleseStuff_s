@@ -267,27 +267,7 @@
                                     </li>
                                     <li>
                                         <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUp.php')"></i>
-                                            <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="getDynamicContent('signUpIn.php')"></i> -->
-                                            <!-- <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon"></i>
-                                            <div class="dropdown-menu login-form">
-                                                <form method="post">
-                                                    <div class="form-group">
-                                                        <label>Username</label>
-                                                        <input type="text" class="form-control" required="required">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="clearfix">
-                                                            <label>Password</label>
-                                                            <a href="#" class="float-right text-muted hover-underline-animation"><small>Forgot?</small></a>
-                                                        </div>
-                                                        <input type="password" class="form-control" required="required">
-                                                    </div>
-
-                                                    <button type="button" class="btn btn-primary reg-btn"><a href="#" class="text-light">Sign Up</a></button>
-                                                    <button type="submit" class="btn btn-danger reg-btn"><a name="" class="text-light">Login</a></button>
-                                                </form>
-                                            </div> -->
+                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUpIn/signUp.php')"></i>
                                         </div>
                                     </li>
                                 </ul>

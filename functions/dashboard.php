@@ -6,14 +6,22 @@
     $numOfPartners = 13;
     $yearOfOrigin = 2019;
     $yearsOfExperience = date("Y") - $yearOfOrigin;
-    $numOfBlogs = 1500;
-    $numOfUsers = 100;
 
     // Dashboard Blogs
     $featuredContentArray = [];
     $latestContentArray = [];
     $trendingContentArray = [];
 
+    // Number of users
+    $query = "SELECT COUNT(*) FROM $mainDbTables[1]";
+    $getUserCount = $pdo->prepare($query);
+    $getUserCount->execute();
+    $numOfUsers = $getUserCount->fetchColumn();
     
+    // Number of blogs
+    $query = "SELECT COUNT(*) FROM $mainDbTables[2]";
+    $getBlogCount = $pdo->prepare($query);
+    $getBlogCount->execute();
+    $numOfBlogs = $getBlogCount->fetchColumn();
 
 ?>

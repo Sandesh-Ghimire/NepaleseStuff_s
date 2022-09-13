@@ -1,24 +1,49 @@
 <?php
 
-    $dbHost = "localhost";
-    $dbName = "nepalesestuffmain";
-    $username = "root";
+    $host = "localhost";
+    $maindbname = "nepalesestuffmain";
+    $user = "root";
     $password = "";
 
     // Host Name | Database Name
-    $dsn = "mysql:host=$dbHost; dbname=$dbName;";
+    $dsn = "mysql:host=$host; dbname=$maindbname;";
+
+    // Tables in database
+    $mainDbTables = array('admintable', 'usertable', 'blogtable');
     
     try {
+        
+        // User Input
+        // $id = 1;
+
         // Data Source Name | Username | Password
-        $conn = new PDO($dsn, $username, $password);
+        $pdo = new PDO($dsn, $user, $password);
+
         // Set Error Mode
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        // $query = "SELECT * FROM admintable;";
-        // $conn->query($query);
-        // echo "connection successfull";
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // PDO Query (Named Parameter)
+        // $query = "SELECT * FROM admintable where id=:id;";
+
+        // PDO Prepared Statement
+        // $stmt = $pdo->prepare($query);
+
+        // Execute Prepared statment (Named Parameter)
+        // $stmt->execute(['id' => $id]);
+
+        // Execute Prepared statment (Positional Parameter)
+        // $stmt->execute([$id]);
+        
+        // Display result
+        // while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        //     echo $row->name . "<br>";
+        // }
+
+        // echo "Connection established";
+
     } catch (PDOException $e) {
         echo $e->getMessage();
-        die($conn);
+        die($pdo);
     }
 
 ?>
