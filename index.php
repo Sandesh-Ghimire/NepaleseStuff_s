@@ -1,6 +1,7 @@
 <?php
     include "functions/connect.php";
     require_once "functions/variables.php";
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +28,68 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <style>        
+        .userdropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .userdropdown-content {
+            display: none;
+            position: absolute;
+            border-radius: 8px;
+            background-color: #fff;
+            min-width: 144px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            /* text-align: center; */
+        }
+
+        @media only screen and (min-width:992px) {
+            .userdropdown-content {
+                top: 60px;
+                right: 0px;
+                min-width: 233px;
+            }
+        }
+        @media only screen and (max-width:991px) {
+            .userdropdown-content {
+                top: 0px;
+                left: 34px;
+                min-width: 233px;
+            }
+        }
+        
+        .userdropdown-content a {
+            color: black;
+            padding: 8px auto;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s !important;
+        }
+
+        .userdropdown-content a i {
+            margin: 11px 13px 0 8px;
+        }
+        
+        .userdropdown a:hover {
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+            outline: 1px solid red;
+            border-radius: 21px;
+            margin: 0 8px;
+        }
+        
+        .show {
+            display: block;
+        }
+
+        i.dropbtn {
+            color: #04347c !important;
+        }
+
+    </style>
 
 </head>
 
@@ -93,7 +156,7 @@
                                                     <li>|</li>
                                                     <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">FAQ</a></li>
+                                                    <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">Forum</a></li>
                                                 </ul>
                                             </center>
                                         </div>
@@ -266,9 +329,25 @@
                                         </form>
                                     </li>
                                     <li>
-                                        <div class="navbar-nav action-buttons ml-auto">
-                                            <i class="fa-solid fa-circle-user" data-toggle="dropdown" id="profile-icon" onclick="goToAnotherPage('signUpIn/signUp.php')"></i>
-                                        </div>
+                                        <?php 
+                                            if (isset($_SESSION['userId'])) {
+                                                // echo "<script>alert('Session present')</script>";
+                                                echo 
+                                                "<div class=\"navbar-nav action-buttons ml-auto userdropdown\">
+                                                    <i class=\"fa-solid fa-circle-user dropbtn\" onclick=\"myFunction()\" id=\"profile-icon\" ></i>
+                                                    <div id=\"myDropdown\" class=\"userdropdown-content py-2\">
+                                                        <a><i class=\"fa-solid fa-user\"></i>".$_SESSION['username']."</a>
+                                                        <a onclick=getDynamicContent('signUpIn/settings.php') style='cursor:pointer;'><i class=\"fa-solid fa-gear\"></i>Settings</a>
+                                                        <a href=\"signUpIn/logout.php\"><i class=\"fa-solid fa-right-from-bracket\"></i>Log Out</a>
+                                                    </div>
+                                                </div>";
+                                            } else {
+                                                // echo "<script>alert('Session not resent')</script>";
+                                                echo "<div class=\"navbar-nav action-buttons ml-auto\">
+                                                        <i class=\"fa-solid fa-circle-user\" id=\"profile-icon\" onclick=\"goToAnotherPage('signUpIn/signIn.php')\"></i>
+                                                    </div>";
+                                            }
+                                        ?>
                                     </li>
                                 </ul>
                                 <!-- Nav End -->
@@ -388,6 +467,28 @@
     <!-- Custom JS -->
     <script src="js/active.js"></script>
     <script src="js/control.js"></script>
+
+    <script>
+        /* When the user clicks on the profile button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("userdropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 

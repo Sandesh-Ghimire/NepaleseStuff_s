@@ -336,7 +336,7 @@
                         </div>
 
                         <!-- nav-3 -->
-                        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav2">
+                        <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav3">
                             <div class="row">
                                 <!-- Single News Area -->
                                 <div class="col-12 col-sm-4">

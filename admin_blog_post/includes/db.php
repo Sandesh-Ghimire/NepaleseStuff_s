@@ -1,5 +1,5 @@
 <?php 
 
-$con = mysqli_connect("localhost","root","","adminlogin");
+$con = mysqli_connect("localhost","root","","nepalesestuffmain");
 
 ?>

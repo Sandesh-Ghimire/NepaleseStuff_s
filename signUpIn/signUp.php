@@ -8,19 +8,29 @@
                     $email = $_POST['email'];
                     $pswd = htmlspecialchars($_POST['pswd']);
                     $pswd_c = htmlspecialchars($_POST['pswd_c']);
-                    if($pswd==$pswd_c){
-                        $query = "INSERT INTO $mainDbTables[1] (`username`, `email`, `password`) VALUES (?, ?, ?)";
+                    if($pswd==$pswd_c && !empty($username) && !empty($email)){
+                        $query = "SELECT `email` FROM $mainDbTables[1] WHERE `email` = ?";
                         $stmt = $pdo->prepare($query);
-                        $stmt->execute([$username, $email, $pswd]);
-                        echo "<script>alert('Successfully created account');</script>";
+                        $stmt->execute([$email]);
+                        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        if (count($result)==0) {
+                            $query = "INSERT INTO $mainDbTables[1] (`username`, `email`, `password`) VALUES (?, ?, ?)";
+                            $stmt = $pdo->prepare($query);
+                            $stmt->execute([$username, $email, $pswd]);
+                            echo "<script>alert('Successfully created account');</script>";
+                        } else {
+                            echo "<script>alert('Email already in use');</script>";
+                        }
                     } else {
                         echo "<script>alert('Code Modification Detected: Response captured');</script>";
                     }
                 } else {
                     echo "<script>alert('Code Modification Detected: Response captured');</script>";
                 }
-                
             }
+            // echo hash('sha512', $_POST['pswd']);
+            // echo password_hash($_POST['pswd'], PASSWORD_DEFAULT);
+            // password_verify($pswd, $hashed_pswd);
         }
     }
     catch (Exception $e) {
@@ -105,19 +115,19 @@
         "use strict";
 
         $('#inputName').on('keyup', ()=> {
-            setTimeout(checkUserName(), 1000);
+            setTimeout(checkUserName(), 3000);
         });
 
         $('#inputEmail').on('keyup', ()=> {
-            setTimeout(checkEmail(), 1000);
+            setTimeout(checkEmail(), 3000);
         });
 
         $('#inputPassword').on('keyup', ()=> {
-            setTimeout(checkPswd(), 1000);
+            setTimeout(checkPswd(), 3000);
         });
 
         $('#inputConfirmPassword').on('keyup', ()=> {
-            setTimeout(checkConfirmPswd(), 1000);
+            setTimeout(checkConfirmPswd(), 3000);
         });
 
         $('#inputPassword, #inputConfirmPassword, #inputEmail, #inputName').on('keyup', ()=> {

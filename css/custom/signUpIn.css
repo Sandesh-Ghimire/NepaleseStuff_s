@@ -26,9 +26,11 @@
 }
 
 .form-wrapper {
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px !important;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     overflow: hidden;
-    border-radius: 8px;
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #ef1b48, #04347c);
 }
 
 @media only screen and (max-width: 390px) {
@@ -70,17 +72,20 @@
 .is-valid-input {
     border-color: rgba(0, 255, 0, 0.8) !important;
     box-shadow: rgba(0, 255, 0, 0.3) 0px 0px 3px !important;
+    transition: 0.5s;
 }
 
 .is-invalid-input {
     border-color: rgba(255, 0, 0, 0.8)!important;
     box-shadow: rgba(255, 0, 0, 0.3) 0px 0px 3px !important;
+    transition: 0.5s;
 }
 
 .disable-element {
     pointer-events: none;
     cursor: no-drop;
     background-color: #888;
+    transition: 0.5s;
 }
 
 .error-msg {

@@ -1638,7 +1638,7 @@ header {
         margin: 0 3px 0 3px;
     }
     #profile-icon {
-        position: absolute;
+        position: relative;
         top: -50px !important;
         left: 244px;
     }
