@@ -332,11 +332,10 @@
                                         <?php 
                                             if (isset($_SESSION['userId'])) {
                                                 // echo "<script>alert('Session present')</script>";
-                                                echo 
-                                                "<div class=\"navbar-nav action-buttons ml-auto userdropdown\">
+                                                echo "<div class=\"navbar-nav action-buttons ml-auto userdropdown\">
                                                     <i class=\"fa-solid fa-circle-user dropbtn\" onclick=\"myFunction()\" id=\"profile-icon\" ></i>
                                                     <div id=\"myDropdown\" class=\"userdropdown-content py-2\">
-                                                        <a><i class=\"fa-solid fa-user\"></i>".$_SESSION['username']."</a>
+                                                        <a style='text-transform:none;'><i class=\"fa-solid fa-user\"></i>".$_SESSION['username']."</a>
                                                         <a onclick=getDynamicContent('signUpIn/settings.php') style='cursor:pointer;'><i class=\"fa-solid fa-gear\"></i>Settings</a>
                                                         <a href=\"signUpIn/logout.php\"><i class=\"fa-solid fa-right-from-bracket\"></i>Log Out</a>
                                                     </div>

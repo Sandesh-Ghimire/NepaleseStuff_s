@@ -18,6 +18,7 @@
                         $_SESSION['userId'] = $id;
                         $_SESSION['email'] = $email;
                         $_SESSION['username'] = $username;
+                        // $_SESSION['expire'] = time() + (60 * 60 * 24);
                         // setcookie('email', $email, time() + 60*60*24*30);
                         // echo "<script>alert($id $email $username);</script>";
 
