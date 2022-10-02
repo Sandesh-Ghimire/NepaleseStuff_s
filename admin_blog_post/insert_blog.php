@@ -6,7 +6,6 @@
         echo "<script>window.open('login.php','_self')</script>";
     }
 
-    $name = $_SESSION['admin_name'];
     if (isset($_POST['submit'])) {
         $query = "";
         $flag = false;
@@ -36,11 +35,7 @@
         // echo "<script>alert('$val[0]')</script>";
 
         // Author
-        if (isset($_POST['arthurName'])) {
-            $val[1] = $_POST['arthurName'];
-        } else {
-            $errorMsg[1] = "Arthur name is not set";
-        }
+        $val[1] = $_SESSION['admin_name'];
 
         // echo "<script>alert('$val[1]')</script>";
 
@@ -58,13 +53,13 @@
             $tagInputName = "tag" . (string)$i;
             if ($i==1) {
                 if (isset($_POST[$tagInputName])) {
-                    $val[$i + 8] = $_POST[$tagInputName];
+                    $val[$i + 8] = strtolower($_POST[$tagInputName]);
                 } else {
                     $errorMsg[$i + 8] = "Tag $i is not set";
                 }
             } else {
                 if (isset($_POST[$tagInputName]) && $_POST[$tagInputName]!='') {
-                    $val[$i + 8] = $_POST[$tagInputName];
+                    $val[$i + 8] = strtolower($_POST[$tagInputName]);
                 }
             }
         }
@@ -177,7 +172,7 @@
 
                             <label class="col-md-3 control-label">Arthur <span class="requiredField">*</span></label>
                             <div class="col-md-6">
-                                <input id="arthurName" name="arthurName" type="text" class="form-control" value="<?= $name ?>" disabled required>
+                                <input id="arthurName" name="arthurName" type="text" class="form-control" value="<?= $_SESSION['admin_name'] ?>" disabled required>
                             </div>
 
                         </div>
