@@ -449,7 +449,7 @@
         <!--/.Footer Links-->
         <hr class="mb-0">
         <div class="py-3 text-center">
-            Copyright © <script>document.write(new Date().getFullYear())</script> | Nepalese Stuff
+            Copyright © <?= date("Y"); ?> | Nepalese Stuff
         </div>
     </footer>
     <!-- ##### Footer Area Start ##### -->

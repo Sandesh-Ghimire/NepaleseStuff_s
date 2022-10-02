@@ -10,10 +10,12 @@
         
         $query = "select * from admintable where email='$admin_email' AND password='$admin_pass'";
         $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_assoc($result);
         $count = mysqli_num_rows($result);
         
         if($count==1){
             $_SESSION['admin_email']=$admin_email;
+            $_SESSION['admin_name']=$row['adminname'];
             echo "<script>window.open('index.php?dashboard','_self')</script>"; 
         } else{
             echo "<script>alert('Email or Password is Wrong !')</script>";

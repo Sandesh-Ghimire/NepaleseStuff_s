@@ -1,7 +1,129 @@
 <?php 
 
+    include("includes/db.php");
+
     if (!isset($_SESSION['admin_email'])) {
         echo "<script>window.open('login.php','_self')</script>";
+    }
+
+    $name = $_SESSION['admin_name'];
+    if (isset($_POST['submit'])) {
+        $query = "";
+        $flag = false;
+        $errorMsgDisplay = "";
+        $numOfTagAndImage = 5;
+        $maxFileSize = 10000000;
+        $val = ['', '', date("Y-m-d"), '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, 0, 0, 0];
+        $errorMsg = ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''];
+
+        // echo "<script>alert('$val[2]')</script>";
+
+        // Get Blog Id
+        $query = "SELECT `blogId` FROM `blogtable` ORDER BY `blogId` DESC LIMIT 0, 1";
+        $result = mysqli_query($con, $query);
+        $row = mysqli_fetch_assoc($result);
+        $blogId = $row['blogId'] + 1;
+
+        // echo "<script>alert('$blogId')</script>";
+
+        // Title
+        if (isset($_POST['blogTitle'])) {
+            $val[0] = $_POST['blogTitle'];
+        } else {
+            $errorMsg[0] = "Title is not set";
+        }
+
+        // echo "<script>alert('$val[0]')</script>";
+
+        // Author
+        if (isset($_POST['arthurName'])) {
+            $val[1] = $_POST['arthurName'];
+        } else {
+            $errorMsg[1] = "Arthur name is not set";
+        }
+
+        // echo "<script>alert('$val[1]')</script>";
+
+        // Blog Content
+        if (isset($_POST['blogContent'])) {
+            $val[3] = $_POST['blogContent'];
+        } else {
+            $errorMsg[3] = "Blog content is not set";
+        }
+
+        // echo "<script>alert('$val[2]')</script>";
+
+        // Tags
+        for ($i=1; $i<=$numOfTagAndImage; $i++) {
+            $tagInputName = "tag" . (string)$i;
+            if ($i==1) {
+                if (isset($_POST[$tagInputName])) {
+                    $val[$i + 8] = $_POST[$tagInputName];
+                } else {
+                    $errorMsg[$i + 8] = "Tag $i is not set";
+                }
+            } else {
+                if (isset($_POST[$tagInputName]) && $_POST[$tagInputName]!='') {
+                    $val[$i + 8] = $_POST[$tagInputName];
+                }
+            }
+        }
+
+        // echo "<script>alert('$val[9] $val[10] $val[11] $val[12] $val[13]')</script>";
+
+        // Images
+        for ($i=1; $i<=$numOfTagAndImage; $i++) {
+            $imgInputName = "img" . (string)$i;
+            if ($_FILES[$imgInputName]['error'] === 4) {
+                if ($i==1) {
+                    // echo "<script>alert('Error: Image does not exist')</script>";
+                    $errorMsg[$i + 3] = "Image $i does not exist";   
+                }
+            } else {
+                $fileName = $_FILES[$imgInputName]['name'];
+                $fileSize = $_FILES[$imgInputName]['size'];
+                $tmpName = $_FILES[$imgInputName]['tmp_name'];
+        
+                $validImgExtension = ['jpg', 'jpeg', 'png'];
+                $imgExtension = explode('.', $fileName);
+                $imgExtension = strtolower(end($imgExtension));
+        
+                if (!in_array($imgExtension, $validImgExtension)) {
+                    if ($i==1) {
+                        // echo "<script>alert('Error: Invalid image type')</script>";
+                        $errorMsg[$i + 3] = "Image $i is invalid image type";
+                    }
+                } else if ($fileSize > $maxFileSize) {
+                    // echo "<script>alert('Error: Image size too large')</script>";
+                    $errorMsg[$i + 3] = "Image $i file size is large";
+                } else {
+                    $newImgName = $blogId . "_" . $i . "." . $imgExtension;
+                    $val[$i + 3] = $newImgName;
+                    move_uploaded_file($tmpName, "../img/blog-img/" . $newImgName);
+                }
+            }
+        }
+
+        // echo "<script>alert('$val[3] $val[4] $val[5] $val[6] $val[7]')</script>";
+
+        for ($i=0; $i<count($errorMsg); $i++) {
+            if ($errorMsg[$i] != "") {
+                $flag = true;
+                $errorMsgDisplay = $errorMsgDisplay . $errorMsg[$i] . "<br>";
+            }
+        }
+
+        if ($flag==true) {
+            // Error Message
+            echo "<script>alert('$errorMsgDisplay');</script>";
+        } else {
+            // Final Query
+            $query = "INSERT INTO `blogtable` (`title`, `author`, `date`, `blogcon`, `img1`, `img2`, `img3`, `img4`, `img5`,`tag1`, `tag2`, `tag3`, `tag4`, `tag5`, `userViewCount`, `guestViewCount`, `reportCount`, `bookmarkCount`, `upvoteCount`, `downvoteCount`) VALUES ('$val[0]', '$val[1]', '$val[2]', '$val[3]', '$val[4]',' $val[5]',' $val[6]', '$val[7]', '$val[8]', '$val[9]', '$val[10]', '$val[11]', '$val[12]', '$val[13]', '$val[14]', '$val[15]', '$val[16]', '$val[17]', '$val[18]', '$val[19]')";
+            mysqli_query($con, $query);
+            
+            // Success Message
+            echo "<script>alert('Successfull');</script>";
+        }
     }
 
 ?>
@@ -31,20 +153,21 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
 
-                <!-- <div class="panel-heading">
-                    <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Insert Blog</h3>
-                </div> -->
+                <!-- Heading -->
+                <div class="panel-heading">
+                    <h3 class="panel-title">Insert Blogs</h3> 
+                </div>
 
                 <!-- Form Begins -->
                 <div class="panel-body">
-                    <form method="post" class="form-horizontal" enctype="multipart/form-data">
+                    <form method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data">
 
                         <!-- Blog Title -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Blog Title</label>
+                            <label class="col-md-3 control-label">Blog Title <span class="requiredField">*</span></label>
                             <div class="col-md-6">
-                                <input name="blog_title" type="text" class="form-control" placeholder="Title for the blog..." required>
+                                <input name="blogTitle" type="text" class="form-control" placeholder="Title for the blog..." required>
                             </div>
 
                         </div>
@@ -52,9 +175,9 @@
                         <!-- Arthur -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Arthur</label>
+                            <label class="col-md-3 control-label">Arthur <span class="requiredField">*</span></label>
                             <div class="col-md-6">
-                                <input name="arthur_name" type="text" class="form-control" placeholder="Your name..." required>
+                                <input id="arthurName" name="arthurName" type="text" class="form-control" value="<?= $name ?>" disabled required>
                             </div>
 
                         </div>
@@ -62,9 +185,9 @@
                         <!-- Image 1 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Image 1</label>
+                            <label class="col-md-3 control-label">Image 1 <span class="requiredField">*</span></label>
                             <div class="col-md-6">
-                                <input name="img1" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control" required>
+                                <input name="img1" type="file" accept=".png, .jpeg, .jpg" class="form-control" required>
                             </div>
 
                         </div>
@@ -74,7 +197,7 @@
 
                             <label class="col-md-3 control-label">Image 2</label>
                             <div class="col-md-6">
-                                <input name="img2" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control">
+                                <input name="img2" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
                         </div>
@@ -84,7 +207,7 @@
                             
                             <label class="col-md-3 control-label">Image 3</label>
                             <div class="col-md-6">
-                                <input name="img3" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control">
+                                <input name="img3" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
                         </div>
@@ -94,7 +217,7 @@
                             
                             <label class="col-md-3 control-label">Image 4</label>
                             <div class="col-md-6">
-                                <input name="img4" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control">
+                                <input name="img4" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
                         </div>
@@ -104,7 +227,7 @@
 
                             <label class="col-md-3 control-label">Image 5</label>
                             <div class="col-md-6">
-                                <input name="img5" type="file" accept="image/png, image/jpeg, image/jpg" class="form-control">
+                                <input name="img5" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
                         </div>
@@ -112,7 +235,7 @@
                         <!-- Tag 1 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 1</label>
+                            <label class="col-md-3 control-label">Tag 1 <span class="requiredField">*</span></label>
                             <div class="col-md-6">
                                 <input name="tag1" type="text" class="form-control" placeholder="#" required>
                             </div>
@@ -162,9 +285,9 @@
                         <!-- Blog Content -->
                         <div class="form-group">
                             
-                            <label class="col-md-3 control-label">Blog Content</label>
+                            <label class="col-md-3 control-label">Blog Content <span class="requiredField">*</span></label>
                             <div class="col-md-6">
-                                <textarea name="Blog_desc" cols="19" rows="6" class="form-control"></textarea>
+                                <textarea name="blogContent" cols="19" rows="6" class="form-control"></textarea>
                             </div>
 
                         </div>
