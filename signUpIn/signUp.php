@@ -14,10 +14,31 @@
                         $stmt->execute([$email]);
                         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         if (count($result)==0) {
+
+                            // Add User
                             $query = "INSERT INTO $mainDbTables[1] (`username`, `email`, `password`) VALUES (?, ?, ?)";
                             $stmt = $pdo->prepare($query);
                             $stmt->execute([$username, $email, $pswd]);
+
+                            // Get User Id
+                            $query = "SELECT * FROM $mainDbTables[1] WHERE `email` = ?";
+                            $stmt = $pdo->prepare($query);
+                            $stmt->execute([$email]);
+                            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                            $id = $row['userId'];
+
+                            // Create User Table
+                            $tableName = "userobj" . $id;
+                            $con = mysqli_connect("localhost", "root", "", "nepalesestuffuserobj");
+                            $query = "CREATE TABLE $tableName (`visitedBlog` INT, `upvotedBlog` INT, `downvotedBlog` INT, `bookmarkedBlog` INT, `reportedBlog` INT)";
+                            mysqli_query($con, $query);
+
                             echo "<script>alert('Successfully created account');</script>";
+
+                            // Redirect User for Login
+                            header("Location: signIn.php");
+                            die();
+
                         } else {
                             echo "<script>alert('Email already in use');</script>";
                         }
@@ -34,7 +55,7 @@
         }
     }
     catch (Exception $e) {
-        echo "script>alert($e);</>";
+        echo "<script>alert($e);</script>";
     }
 ?>
 

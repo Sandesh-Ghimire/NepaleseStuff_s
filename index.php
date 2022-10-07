@@ -162,7 +162,7 @@
                                             </center>
                                         </div>
                                     </li>
-                                    <li><a onclick="getDynamicContent('demo.php')" style="cursor: pointer;">Demo</a></li>
+                                    <li><a onclick="getDynamicContent('blog.php')" style="cursor: pointer;">Single Blog</a></li>
                                     <li><a href="#">Places</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">

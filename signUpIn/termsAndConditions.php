@@ -97,6 +97,9 @@
             <p>
                 The user of '<?=$company?>' cannot post or comment any vulgar or inappropriate content that may harass, harm or strike against others faith and belief.
             </p>
+            <p>
+                The data and information provided in the website may not always be 100% accurate, and our organisation 'Nepalese Stuff' is not responsible for any misinterpretation of information available on the website 'nepalesestuff.com'.
+            </p>
         </div>
         <div class="container__nav">
             <a class="button" href="../index.php" style="background-color: #f53838">Home</a>
