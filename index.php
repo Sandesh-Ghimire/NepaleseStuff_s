@@ -114,7 +114,7 @@
             <li>|</li>
             <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">Forum</a></li>
+            <li><a onclick="getDynamicContent('forum/forum.php')" class="setCursorPointer">Forum</a></li>
         </ul>
     </div>
 
@@ -157,7 +157,7 @@
                                                     <li>|</li>
                                                     <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
                                                     <li>|</li>
-                                                    <li><a onclick="getDynamicContent('forum.php')" class="setCursorPointer">Forum</a></li>
+                                                    <li><a onclick="getDynamicContent('forum/forum.php')" class="setCursorPointer">Forum</a></li>
                                                 </ul>
                                             </center>
                                         </div>
@@ -401,7 +401,7 @@
                     <li><a class="setCursorPointer" onclick="getDynamicContent('dashboard.php')">Home&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                     <li><a class="setCursorPointer" onclick="getDynamicContent('about.php')">About&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                     <li><a class="setCursorPointer" onclick="getDynamicContent('contact.php')">Contact&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
-                    <li><a class="setCursorPointer" onclick="getDynamicContent('forum.php')">Forum&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a class="setCursorPointer" onclick="getDynamicContent('forum/forum.php')">Forum&nbsp;&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                 </ul>
             </div>
             <!--/.Second column-->
