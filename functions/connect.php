@@ -2,6 +2,7 @@
 
     $host = "localhost";
     $maindbname = "nepalesestuffmain";
+    $userdbname = "nepalesestuffuserobj";
     $user = "root";
     $password = "";
 
@@ -11,6 +12,7 @@
     // Tables in database
     $mainDbTables = array('admintable', 'usertable', 'blogtable');
     
+    // *** Nepalese Stuff Main ***
     try {
         
         // User Input
@@ -46,4 +48,11 @@
         die($pdo);
     }
 
+    // *** Nepalese Stuff User Object ***
+    try {
+        $con = mysqli_connect($host, $user, $password, $userdbname);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        die($con);
+    }
 ?>

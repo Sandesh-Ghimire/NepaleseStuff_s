@@ -3,11 +3,18 @@
     session_start();
     include "functions/connect.php";
 
-    $id = 9;
+    $id = $_POST['blogid'];
+
     $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
     $stmt = $pdo->prepare($query);
     $stmt->execute([$id]);
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if (isset($_SESSION['userId'])) {
+        $isLoggedIn = true;
+    } else {
+        $isLoggedIn = false;
+    }
 
     $title = $row['title'];
     $author = $row['author'];
@@ -32,17 +39,29 @@
     $downvoteCount = (int)$row['downvoteCount'];
 
     // Increase view count
-    if (isset($_SESSION['userId'])) {
-        $isLoggedIn = true;
-        $userViewCount+=1;
-        $query = "UPDATE `blogtable` SET `userViewCount` = $userViewCount WHERE `blogId` = ?";
+    if ($isLoggedIn) {
+        $userId = $_SESSION['userId'];
+        $tablename = "userobj" . (string)$userId;
+        
+        $query = "UPDATE `blogtable` SET `userViewCount` = $userViewCount+1 WHERE `blogId` = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+
+        // Adding Blog Id to VIsited Blog Column
+        $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
+        $result = mysqli_query($con, $query);
+        $blogRow = mysqli_fetch_assoc($result);
+        if ($blogRow['visitedBlog'] == NULL) {
+            $query = "INSERT INTO $tablename (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES ($id, 0, 0, 0, 0)";
+            mysqli_query($con, $query);
+        }
+
     } else {
-        $isLoggedIn = false;
-        $guestViewCount += 1;
-        $query = "UPDATE `blogtable` SET `guestViewCount` = $guestViewCount WHERE `blogId` = ?";
+        $query = "UPDATE `blogtable` SET `guestViewCount` = $guestViewCount+1 WHERE `blogId` = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+
     }
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([$id]);
 
 ?>
 
@@ -93,10 +112,6 @@
     .blog-container-footer i {
         color: #555;
     }
-    /* .blog-container .blog-img {
-        max-width: 640px;
-        max-height: 360px;
-    } */
 
     @media only screen and (min-width: 992px) {
         .blog-container {
@@ -246,8 +261,30 @@
 </div>
 <!-- HTML Ends -->
 
-<script>
+<!-- PHP Script: Display User Actions on Blog -->
+<?php
 
+    if ($isLoggedIn) {
+        $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
+        $result = mysqli_query($con, $query);
+        $blogRow = mysqli_fetch_assoc($result);
+        if ($blogRow['upvotedBlog']==1) {
+            echo "<script>document.getElementById(\"like\").style.color = \"rgb(4, 52, 213)\";</script>";
+        }
+        if ($blogRow['downvotedBlog']==1) {
+            echo "<script>document.getElementById(\"dislike\").style.color = \"rgb(239, 27, 72)\";</script>";
+        }
+        if ($blogRow['reportedBlog']==1) {
+            echo "<script>document.getElementById(\"report\").style.color = \"rgb(239, 27, 72)\";</script>";
+        }
+        if ($blogRow['bookmarkedBlog']==1) {
+            echo "<script>document.getElementById(\"bookmark\").style.color = \"rgb(4, 52, 213)\";</script>";
+        }
+    }
+?>
+
+<!-- Javascript -->
+<script>
     function changeButtonColor(btn) {
         const red = "rgb(239, 27, 72)";
         const blue = "rgb(4, 52, 213)";
@@ -291,75 +328,78 @@
             } else {
                 ele.style.color = blue;
             }
-        } else {
-            alert("Error: Invalid Button");
         }
     }
 
+    let link = "blogActionVerify.php";
     $('#like').click(() => {
-        $.ajax({
-            url: "verifyBlogAction.php",
-            type: 'POST',
+        $.ajax({ 
+            url: link,
+            type: 'POST',  
             data: {
-                blogId: <?= $id ?>,
-                action: "like"
+                "action": "like",
+                "tablename": "<?= $tablename ?>",
+                "blogid": "<?= $id ?>"
             },
-            success: function(result) {
+            success: function(response) {
                 changeButtonColor("like");
             },
-            error: function(result) {
-                alert("Error: Something went wrong...");
+            error: function(response) {
+                alert("Error: Like");
             }
         });
     });
 
     $('#dislike').click(() => {
-        $.ajax({
-            url: "verifyBlogAction.php",
-            type: 'POST',
+        $.ajax({  
+            url: link,
+            type: 'POST',  
             data: {
-                blogId: <?= $id ?>,
-                action: "dislike"
+                "action": "dislike",
+                "tablename": "<?= $tablename ?>",
+                "blogid": "<?= $id ?>"
             },
-            success: function(result) {
+            success: function(response) {
                 changeButtonColor("dislike");
             },
-            error: function(result) {
-                alert("Error: Something went wrong...");
+            error: function(response) {
+                alert("Error: Dislike");
             }
         });
     });
 
     $('#report').click(() => {
-        $.ajax({
-            url: "verifyBlogAction.php",
-            type: 'POST',
+        $.ajax({  
+            url: link,
+            type: 'POST',  
             data: {
-                blogId: <?= $id ?>,
-                action: "report"
+                "action": "report",
+                "tablename": "<?= $tablename ?>",
+                "blogid": "<?= $id ?>"
             },
-            success: function(result) {
+            success: function(response) {
                 changeButtonColor("report");
             },
-            error: function(result) {
-                alert("Error: Something went wrong...");
+            error: function(response) {
+                alert("Error: Report");
             }
         });
     });
 
     $('#bookmark').click(() => {
-        $.ajax({
-            url: "verifyBlogAction.php",
-            type: 'POST',
+        $.ajax({  
+            url: link,
+            type: 'POST', 
             data: {
-                blogId: <?= $id ?>,
-                action: "bookmark"
+                "action": "bookmark",
+                "tablename": "<?= $tablename ?>",
+                "blogid": "<?= $id ?>"
             },
-            success: function(result) {
+            success: function(response) {
                 changeButtonColor("bookmark");
             },
-            error: function(result) {
-                alert("Error: Something went wrong...");
+            error: function(response) {
+                alert("Error: Bookmark");
             }
         });
     });

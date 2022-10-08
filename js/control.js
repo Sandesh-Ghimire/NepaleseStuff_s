@@ -13,19 +13,16 @@ function errorHandler(contentLink) {
 // Change Content (event: 'click')
 function getDynamicContent(contentLink) {
     fetch(contentLink, {
-            method: 'HEAD'
+            method: 'POST'
         })
         .then(res => {
             if (res.ok) {
                 $('#dynamic-content').load(contentLink);
-                // location.reload(false);
-                // $('#scrollUp').trigger('click');
-
             } else {
                 errorHandler(contentLink);
             }
         }).catch(err => {
-            errorHandler(contentLink)
+            errorHandler(contentLink);
         });
 }
 

@@ -29,18 +29,18 @@
                         <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav1">
                             <div class="row">
                                 <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-sm-4" id="blog1" onclick="getBlogContent(9)">
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a name=""><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Jan 20, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Nepal: 8th Wonder of the World</a>
+                                            <a name="" class="post-title">Nepal: 8th Wonder of the World</a>
                                         </div>
                                     </div>
                                 </div>

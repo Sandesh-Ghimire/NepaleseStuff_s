@@ -488,6 +488,57 @@
                 }
             }
         }
+
+        // function getBlogContent(blogid) {
+        //     // alert(blogid);
+        //     $.ajax({
+        //         url: "blog.php",
+        //         type: 'post',
+        //         data: {
+        //             "blogid": blogid
+        //         },
+        //         success: function(result) {
+        //             $('#dynamic-content').load(result);
+        //         },
+        //         error: function(result) {
+        //             alert("Error: Unable to load page...");
+        //         }
+        //     });
+        // }
+        // POST Method
+        function getBlogContent(id) {
+
+            // let data = { "blogid": id };
+            let data = "blogid=" + id;
+
+            // Create Object
+            const xhr = new XMLHttpRequest();
+
+            // Open the object
+            xhr.open("POST", 'blog.php', true);
+
+            // When response is ready
+            // xhr.onreadystatechange = () => {
+            //     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            //         document.getElementById('dynamic-content').innerHTML= this.responseText;
+            //     }
+            // }
+
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    // console.log(JSON.parse(this.responseText));
+                    // $('#dynamic-content').load(this.responseText);
+                    // document.getElementById('dynamic-content').innerHTML= this.responseText;
+                    alert(this.responseText);
+                } else {
+                    errorHandler("");
+                }
+            };
+
+            // Send Request
+            xhr.send(data);
+        }
+
     </script>
 
 </body>
