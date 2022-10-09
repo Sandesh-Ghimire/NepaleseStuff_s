@@ -155,13 +155,13 @@
 
                 <!-- Form Begins -->
                 <div class="panel-body">
-                    <form method="post" class="form-horizontal" autocomplete="off" enctype="multipart/form-data">
+                    <form method="post" class="container form-horizontal" autocomplete="off" enctype="multipart/form-data">
 
                         <!-- Blog Title -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Blog Title <span class="requiredField">*</span></label>
-                            <div class="col-md-6">
+                            <label class="control-label">Blog Title <span class="requiredField">*</span></label>
+                            <div class="">
                                 <input name="blogTitle" type="text" class="form-control" placeholder="Title for the blog..." required>
                             </div>
 
@@ -170,8 +170,8 @@
                         <!-- Arthur -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Arthur <span class="requiredField">*</span></label>
-                            <div class="col-md-6">
+                            <label class="control-label">Arthur <span class="requiredField">*</span></label>
+                            <div class="">
                                 <input id="arthurName" name="arthurName" type="text" class="form-control" value="<?= $_SESSION['admin_name'] ?>" disabled required>
                             </div>
 
@@ -180,8 +180,8 @@
                         <!-- Image 1 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Image 1 <span class="requiredField">*</span></label>
-                            <div class="col-md-6">
+                            <label class="control-label">Image 1 <span class="requiredField">*</span></label>
+                            <div class="">
                                 <input name="img1" type="file" accept=".png, .jpeg, .jpg" class="form-control" required>
                             </div>
 
@@ -190,8 +190,8 @@
                         <!-- Image 2 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Image 2</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Image 2</label>
+                            <div class="">
                                 <input name="img2" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
@@ -200,8 +200,8 @@
                         <!-- Image 3 -->
                         <div class="form-group">
                             
-                            <label class="col-md-3 control-label">Image 3</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Image 3</label>
+                            <div class="">
                                 <input name="img3" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
@@ -210,8 +210,8 @@
                         <!-- Image 4 -->
                         <div class="form-group">
                             
-                            <label class="col-md-3 control-label">Image 4</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Image 4</label>
+                            <div class="">
                                 <input name="img4" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
@@ -220,8 +220,8 @@
                         <!-- Image 5 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Image 5</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Image 5</label>
+                            <div class="">
                                 <input name="img5" type="file" accept=".png, .jpeg, .jpg" class="form-control">
                             </div>
 
@@ -230,8 +230,8 @@
                         <!-- Tag 1 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 1 <span class="requiredField">*</span></label>
-                            <div class="col-md-6">
+                            <label class="control-label">Tag 1 <span class="requiredField">*</span></label>
+                            <div class="">
                                 <input name="tag1" type="text" class="form-control" placeholder="#" required>
                             </div>
 
@@ -240,8 +240,8 @@
                         <!-- Tag 2 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 2</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Tag 2</label>
+                            <div class="">
                                 <input name="tag2" type="text" class="form-control" placeholder="#">
                             </div>
 
@@ -250,8 +250,8 @@
                         <!-- Tag 3 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 3</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Tag 3</label>
+                            <div class="">
                                 <input name="tag3" type="text" class="form-control" placeholder="#">
                             </div>
 
@@ -260,8 +260,8 @@
                         <!-- Tag 4 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 4</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Tag 4</label>
+                            <div class="">
                                 <input name="tag4" type="text" class="form-control" placeholder="#">
                             </div>
 
@@ -270,8 +270,8 @@
                         <!-- Tag 5 -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label">Tag 5</label>
-                            <div class="col-md-6">
+                            <label class="control-label">Tag 5</label>
+                            <div class="">
                                 <input name="tag5" type="text" class="form-control" placeholder="#">
                             </div>
 
@@ -280,8 +280,8 @@
                         <!-- Blog Content -->
                         <div class="form-group">
                             
-                            <label class="col-md-3 control-label">Blog Content <span class="requiredField">*</span></label>
-                            <div class="col-md-6">
+                            <label class="control-label">Blog Content <span class="requiredField">*</span></label>
+                            <div class="">
                                 <textarea name="blogContent" cols="19" rows="6" class="form-control"></textarea>
                             </div>
 
@@ -290,8 +290,8 @@
                         <!-- Submit -->
                         <div class="form-group">
 
-                            <label class="col-md-3 control-label"></label>
-                            <div class="col-md-6">
+                            <label class="col-md-10 control-label"></label>
+                            <div class="col-md-2">
                                 <input name="submit" value="Insert Blog" type="submit" class="btn btn-primary form-control">
                             </div>
 
@@ -310,6 +310,10 @@
         tinymce.init({
             selector: 'textarea'
         });
+    </script>
+    <script>
+        // document.getElementById('mceu_30').innerText = "Powered by Nepalese Stuff";
+        alert(document.getElementById('mceu_30').innerText);
     </script>
 </body>
 

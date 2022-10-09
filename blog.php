@@ -72,6 +72,8 @@
     .blog-container p {
         color: #555;
         font-size: 16px;
+        font-weight: 500;
+        line-height: 1.8;
     }
 
     .blog-stat {
@@ -118,6 +120,15 @@
 
     .blog-img {
         border-radius: 8px;
+    }
+
+    .blog-content-end {
+        font-size: 16px;
+        font-weight: 500;
+        color: #444;
+        text-align: end;
+        line-height: 1.3;
+        padding-bottom: 8px;
     }
 
     /* Media Query */
@@ -171,6 +182,10 @@
                     <img src="<?= "img/blog-img/" . $img1 ?>" alt="thumbnail-1" class="blog-img img-fluid" max-height>
                 </center>
                 <span class="blog-content"> <?= $blogCon ?> </span>
+                <div class="blog-content-end">
+                    <div><?= $author ?></div>
+                    <div><?= $date ?></div>
+                </div>
                 <hr>
 
                 <!-- Blog Footer -->

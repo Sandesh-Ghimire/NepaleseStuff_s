@@ -1,10 +1,11 @@
+<!DOCTYPE html>
+
 <?php
     include "functions/connect.php";
     require_once "functions/variables.php";
     session_start();
 ?>
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -469,8 +470,9 @@
     <script src="js/control.js"></script>
 
     <script>
-        /* When the user clicks on the profile button,
-        toggle between hiding and showing the dropdown content */
+
+        // When the user clicks on the profile button,
+        //toggle between hiding and showing the dropdown content
         function myFunction() {
             document.getElementById("myDropdown").classList.toggle("show");
         }

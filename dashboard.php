@@ -14,7 +14,7 @@
                         <a name="" class="nav-item nav-link back-slash-separator" style="pointer-events: none;">/</a>
                         <a class="nav-item nav-link" id="nav2" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Latest</a>
                         <a name="" class="nav-item nav-link back-slash-separator" style="pointer-events: none;">/</a>
-                        <a class="nav-item nav-link" id="nav3" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">Trending</a>
+                        <a class="nav-item nav-link" id="nav3" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">Popular</a>
                     </div>
                 </nav>
             </div>
