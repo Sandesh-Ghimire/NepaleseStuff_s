@@ -1,9 +1,9 @@
-<?php
-    
+<?php 
+
     session_start();
     include "functions/connect.php";
 
-    $id = $_POST['blogid'];
+    $id = $_GET["blogId"];
 
     $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
     $stmt = $pdo->prepare($query);
@@ -12,6 +12,16 @@
 
     if (isset($_SESSION['userId'])) {
         $isLoggedIn = true;
+        $tablename = "userobj".(string)$_SESSION['userId'];
+
+        // Adding Blog Id to Visited Blog Column
+        $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
+        $result = mysqli_query($con, $query);
+        $blogRow = mysqli_fetch_assoc($result);
+        if ($blogRow['visitedBlog'] == NULL) {
+            $query = "INSERT INTO $tablename (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES ($id, 0, 0, 0, 0)";
+            mysqli_query($con, $query);
+        }
     } else {
         $isLoggedIn = false;
     }
@@ -37,31 +47,6 @@
     $bookmarkCount = (int)$row['bookmarkCount'];
     $upvoteCount = (int)$row['upvoteCount'];
     $downvoteCount = (int)$row['downvoteCount'];
-
-    // Increase view count
-    if ($isLoggedIn) {
-        $userId = $_SESSION['userId'];
-        $tablename = "userobj" . (string)$userId;
-        
-        $query = "UPDATE `blogtable` SET `userViewCount` = $userViewCount+1 WHERE `blogId` = ?";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$id]);
-
-        // Adding Blog Id to VIsited Blog Column
-        $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
-        $result = mysqli_query($con, $query);
-        $blogRow = mysqli_fetch_assoc($result);
-        if ($blogRow['visitedBlog'] == NULL) {
-            $query = "INSERT INTO $tablename (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES ($id, 0, 0, 0, 0)";
-            mysqli_query($con, $query);
-        }
-
-    } else {
-        $query = "UPDATE `blogtable` SET `guestViewCount` = $guestViewCount+1 WHERE `blogId` = ?";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$id]);
-
-    }
 
 ?>
 
@@ -285,122 +270,143 @@
 
 <!-- Javascript -->
 <script>
-    function changeButtonColor(btn) {
-        const red = "rgb(239, 27, 72)";
-        const blue = "rgb(4, 52, 213)";
-        const grey = "rgb(85, 85, 85)";
-        let ele = document.getElementById(btn);
-        let likeValue = document.getElementById("likevalue");
-        let dislikeValue = document.getElementById("dislikevalue");
-        if (btn=="like") {
-            if (document.getElementById("dislike").style.color==red) {
-                dislikeValue.innerText = Number(dislikeValue.innerText) - 1;
-            }
-            if (ele.style.color==blue) {
-                ele.style.color = grey;
-                likeValue.innerText = Number(likeValue.innerText) - 1;
-            } else {
-                ele.style.color = blue;
-                document.getElementById("dislike").style.color = grey;
-                likeValue.innerText = Number(likeValue.innerText) + 1;
-            }
-        } else if (btn=="dislike") {
-            if (document.getElementById("like").style.color==blue) {
-                likeValue.innerText = Number(likeValue.innerText) - 1;
-            }
-            if (ele.style.color==red) {
-                ele.style.color = grey;
-                dislikeValue.innerText = Number(dislikeValue.innerText) - 1;
-            } else {
-                ele.style.color = red;
-                document.getElementById("like").style.color = grey;
-                dislikeValue.innerText = Number(dislikeValue.innerText) + 1;
-            }
-        } else if (btn=="report") {
-            if (ele.style.color==red) {
-                ele.style.color = grey;
-            } else {
-                ele.style.color = red;
-            }
-        } else if (btn=="bookmark") {
-            if (ele.style.color==blue) {
-                ele.style.color = grey;
-            } else {
-                ele.style.color = blue;
+
+    $(document).ready(()=> {
+
+        // Client Side Blog Action Handler
+        function changeButtonColor(btn) {
+            const red = "rgb(239, 27, 72)";
+            const blue = "rgb(4, 52, 213)";
+            const grey = "rgb(85, 85, 85)";
+            let ele = document.getElementById(btn);
+            let likeValue = document.getElementById("likevalue");
+            let dislikeValue = document.getElementById("dislikevalue");
+            if (btn=="like") {
+                if (document.getElementById("dislike").style.color==red) {
+                    dislikeValue.innerText = Number(dislikeValue.innerText) - 1;
+                }
+                if (ele.style.color==blue) {
+                    ele.style.color = grey;
+                    likeValue.innerText = Number(likeValue.innerText) - 1;
+                } else {
+                    ele.style.color = blue;
+                    document.getElementById("dislike").style.color = grey;
+                    likeValue.innerText = Number(likeValue.innerText) + 1;
+                }
+            } else if (btn=="dislike") {
+                if (document.getElementById("like").style.color==blue) {
+                    likeValue.innerText = Number(likeValue.innerText) - 1;
+                }
+                if (ele.style.color==red) {
+                    ele.style.color = grey;
+                    dislikeValue.innerText = Number(dislikeValue.innerText) - 1;
+                } else {
+                    ele.style.color = red;
+                    document.getElementById("like").style.color = grey;
+                    dislikeValue.innerText = Number(dislikeValue.innerText) + 1;
+                }
+            } else if (btn=="report") {
+                if (ele.style.color==red) {
+                    ele.style.color = grey;
+                } else {
+                    ele.style.color = red;
+                }
+            } else if (btn=="bookmark") {
+                if (ele.style.color==blue) {
+                    ele.style.color = grey;
+                } else {
+                    ele.style.color = blue;
+                }
             }
         }
-    }
 
-    let link = "blogActionVerify.php";
-    $('#like').click(() => {
-        $.ajax({ 
-            url: link,
-            type: 'POST',  
+        // *** View Handler ***
+        $.ajax({
+            url: "blogViewHandler.php",
+            type: "POST",
             data: {
-                "action": "like",
-                "tablename": "<?= $tablename ?>",
-                "blogid": "<?= $id ?>"
-            },
-            success: function(response) {
-                changeButtonColor("like");
+                "userViewCount": "<?= $userViewCount ?>",
+                "guestViewCount": "<?= $guestViewCount ?>",
+                "blogId": "<?= $id ?>"
             },
             error: function(response) {
-                alert("Error: Like");
+                errorHandler("");
             }
         });
-    });
 
-    $('#dislike').click(() => {
-        $.ajax({  
-            url: link,
-            type: 'POST',  
-            data: {
-                "action": "dislike",
-                "tablename": "<?= $tablename ?>",
-                "blogid": "<?= $id ?>"
-            },
-            success: function(response) {
-                changeButtonColor("dislike");
-            },
-            error: function(response) {
-                alert("Error: Dislike");
-            }
+        // *** Blog Action Handler ***
+        let link = "blogActionVerify.php";
+
+        // Like
+        $('#like').click(() => {
+            $.ajax({ 
+                url: link,
+                type: 'POST',  
+                data: {
+                    "action": "like",
+                    "blogid": "<?= $id ?>"
+                },
+                success: function(response) {
+                    changeButtonColor("like");
+                },
+                error: function(response) {
+                    alert("Error: Like");
+                }
+            });
         });
-    });
 
-    $('#report').click(() => {
-        $.ajax({  
-            url: link,
-            type: 'POST',  
-            data: {
-                "action": "report",
-                "tablename": "<?= $tablename ?>",
-                "blogid": "<?= $id ?>"
-            },
-            success: function(response) {
-                changeButtonColor("report");
-            },
-            error: function(response) {
-                alert("Error: Report");
-            }
+        // Dislike
+        $('#dislike').click(() => {
+            $.ajax({  
+                url: link,
+                type: 'POST',  
+                data: {
+                    "action": "dislike",
+                    "blogid": "<?= $id ?>"
+                },
+                success: function(response) {
+                    changeButtonColor("dislike");
+                },
+                error: function(response) {
+                    alert("Error: Dislike");
+                }
+            });
         });
-    });
 
-    $('#bookmark').click(() => {
-        $.ajax({  
-            url: link,
-            type: 'POST', 
-            data: {
-                "action": "bookmark",
-                "tablename": "<?= $tablename ?>",
-                "blogid": "<?= $id ?>"
-            },
-            success: function(response) {
-                changeButtonColor("bookmark");
-            },
-            error: function(response) {
-                alert("Error: Bookmark");
-            }
+        // Report
+        $('#report').click(() => {
+            $.ajax({  
+                url: link,
+                type: 'POST',  
+                data: {
+                    "action": "report",
+                    "blogid": "<?= $id ?>"
+                },
+                success: function(response) {
+                    changeButtonColor("report");
+                },
+                error: function(response) {
+                    alert("Error: Report");
+                }
+            });
+        });
+
+        // Bookmark
+        $('#bookmark').click(() => {
+            $.ajax({  
+                url: link,
+                type: 'POST', 
+                data: {
+                    "action": "bookmark",
+                    "blogid": "<?= $id ?>"
+                },
+                success: function(response) {
+                    changeButtonColor("bookmark");
+                },
+                error: function(response) {
+                    alert("Error: Bookmark");
+                }
+            });
         });
     });
 

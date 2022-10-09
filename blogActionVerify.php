@@ -5,13 +5,13 @@
 
     include "functions/connect.php";
 
-    $action = $_POST["action"];
-    $tablename = $_POST["tablename"];
-    $id = $_POST["blogid"];
-
-    // echo "<script>alert(". $action. " " .$tablename." ".$id. ");</script>";
-
     if (isset($_SESSION['userId'])) {
+
+        $action = $_POST["action"];
+        $tablename = "userobj" . (string)$_SESSION['userId'];
+        $id = $_POST["blogid"];
+
+        // echo "<script>alert(". $action. " " .$tablename." ".$id. ");</script>";
 
         // Get Previous User Response to Blog  
         $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
