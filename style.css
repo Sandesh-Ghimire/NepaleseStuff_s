@@ -1807,6 +1807,8 @@ label {
 
 .thumbnail-small {
     border-radius: 5px !important;
+    min-height: 89px !important;
+    min-width: auto !important;
 }
 
 

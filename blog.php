@@ -119,7 +119,10 @@
     }
 
     .blog-img {
+        overflow: hidden;
         border-radius: 8px;
+        max-height: 520px;
+        max-width: 100% !important;
     }
 
     .blog-content-end {
@@ -178,9 +181,11 @@
 
                 <!-- Blog Content -->
                 <h2 class="blog-title"> <?= $title ?> </h2>
-                <center>
-                    <img src="<?= "img/blog-img/" . $img1 ?>" alt="thumbnail-1" class="blog-img img-fluid" max-height>
-                </center>
+                <div class="blog-img">
+                    <center>
+                        <img src="<?= "img/blog-img/" . $img1 ?>" alt="thumbnail-1" class="img-fluid" max-height>
+                    </center>
+                </div>
                 <span class="blog-content"> <?= $blogCon ?> </span>
                 <div class="blog-content-end">
                     <div><?= $author ?></div>

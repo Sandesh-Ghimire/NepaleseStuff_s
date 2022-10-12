@@ -5,7 +5,7 @@
 <!-- ##### Intro News Area Start ##### -->
 <div class="intro-news-area">
     <div class="container-fluid" style="padding: 0 6%;">
-        <!-- Intro News Filter -->
+        <!-- Content Selector -->
         <div class="intro-news-tab" id="lower-nav">
             <div class="col-12 intro-news-filter d-flex justify-content-between">
                 <nav>
@@ -29,7 +29,7 @@
                         <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav1">
                             <div class="row">
                                 <!-- Single News Area -->
-                                <div class="col-12 col-sm-4" id="blog1" onclick="getBlogContent(9)">
+                                <div class="col-12 col-sm-4" onclick="getBlogContent(9)">
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
@@ -46,35 +46,35 @@
                                 </div>
 
                                 <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-sm-4" onclick="getBlogContent(10)">
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a name=""><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">June 24, 2022</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Kathmandu: The City of Temples</a>
+                                            <a name="" class="post-title">Kathmandu: The City of Temples</a>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-sm-4" onclick="getBlogContent(11)">
                                     <div class="single-blog-post style-2">
                                         <!-- Blog Thumbnail -->
                                         <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
+                                            <a name=""><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
                                         </div>
 
                                         <!-- Blog Content -->
                                         <div class="blog-content">
                                             <span class="post-date">Oct 10, 2021</span>
                                             <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
+                                            <a name="" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                 <!-- Minimized Blog -->
                                 <div class="row mt-4">
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -92,29 +92,29 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Explore Nepal</a>
+                                                <a href="#" class="post-title">Explore Majestic Nepal</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(13)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-small"></a>
+                                                <a href="#"><img src="img/bg-img/thrill.jpg" alt="thumbnail" class="thumbnail-small"></a>
                                             </div>
 
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">Jan 27, 2019</span>
-                                                <a href="#" class="post-title">Feel the thrill</a>
+                                                <a href="#" class="post-title">Feel the thrill: Rafting in Nepal</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(14)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -124,13 +124,13 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">Feb 2, 2021</span>
-                                                <a href="#" class="post-title">Himalayas</a>
+                                                <a href="#" class="post-title">Himalayas in Nepal</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(15)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -140,13 +140,13 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">March 21, 2018</span>
-                                                <a href="#" class="post-title">Greenary</a>
+                                                <a href="#" class="post-title">Greenery in Nepal</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -162,7 +162,7 @@
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -172,7 +172,7 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nepalese Culture</a>
+                                                <a href="#" class="post-title">Nepalese Culture and Tradition</a>
                                             </div>
                                         </div>
                                     </div>

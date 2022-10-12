@@ -167,10 +167,10 @@
 
                         </div>
 
-                        <!-- Arthur -->
+                        <!-- Author -->
                         <div class="form-group">
 
-                            <label class="control-label">Arthur <span class="requiredField">*</span></label>
+                            <label class="control-label">Author <span class="requiredField">*</span></label>
                             <div class="">
                                 <input id="arthurName" name="arthurName" type="text" class="form-control" value="<?= $_SESSION['admin_name'] ?>" disabled required>
                             </div>

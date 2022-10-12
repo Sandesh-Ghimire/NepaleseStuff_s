@@ -163,7 +163,7 @@
                                             </center>
                                         </div>
                                     </li>
-                                    <li><a onclick="getBlogContent(9)" style="cursor: pointer;">Single Blog</a></li>
+                                    <!-- <li><a onclick="getBlogContent(9)" style="cursor: pointer;">Single Blog</a></li> -->
                                     <li><a href="#">Places</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
@@ -338,6 +338,7 @@
                                                     <i class=\"fa-solid fa-circle-user dropbtn\" onclick=\"myFunction()\" id=\"profile-icon\" ></i>
                                                     <div id=\"myDropdown\" class=\"userdropdown-content py-2\">
                                                         <a style='text-transform:none;'><i class=\"fa-solid fa-user\"></i>".$_SESSION['username']."</a>
+                                                        <a onclick=getDynamicContent('signUpIn/playlist.php') style='cursor:pointer;'><i class=\"fa-solid fa-layer-group\"></i>Playlist</a>
                                                         <a onclick=getDynamicContent('signUpIn/settings.php') style='cursor:pointer;'><i class=\"fa-solid fa-gear\"></i>Settings</a>
                                                         <a href=\"signUpIn/logout.php\"><i class=\"fa-solid fa-right-from-bracket\"></i>Log Out</a>
                                                     </div>
