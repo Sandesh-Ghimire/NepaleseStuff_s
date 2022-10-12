@@ -2,10 +2,15 @@
 
     session_start();
 
+    include "../functions/connect.php";
+
+
+
     if(!isset($_SESSION['userId'])) {
         echo "<script>alert('Error: Code Manipulation Detected (Response Captured)')</script>";
         header("Location: ../index.php");
     }
+
 
 
 
@@ -34,6 +39,31 @@
         <div class='tab-pane fade show active' id='nav-1' role='tabpanel' aria-labelledby='nav1'>
             <div class='text-dark text-center'>
                 Bookmark
+
+ <?php
+
+
+if (isset($_SESSION['userId'])) {
+
+    $tablename = "userobj" . (string)$_SESSION['userId'];
+    $query = "SELECT * FROM $tablename WHERE `bookmarkedBlog` = 2";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_assoc($result);
+    echo $row['visitedBlog'];
+
+    echo $tablename; 
+    
+
+}
+
+
+?>
+
+
+
+
+
+
             </div>
         </div>
         <!-- Liked Blog Here -->

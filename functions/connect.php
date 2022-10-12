@@ -1,8 +1,8 @@
 <?php
 
     $host = "localhost";
-    $maindbname = "nepalesestuffmain";
-    $userdbname = "nepalesestuffuserobj";
+    $maindbname = "nepalesestuffmain";//pdo
+    $userdbname = "nepalesestuffuserobj";//sql
     $user = "root";
     $password = "";
 
