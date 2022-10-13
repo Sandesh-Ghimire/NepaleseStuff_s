@@ -66,7 +66,7 @@
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $html = "<div class='col-12 col-sm-6 col-lg-3' onclick='getBlogContent(".$id.")>
+        $html = "<div class='col-12 col-sm-6 col-lg-3' onclick='getBlogContent(".$id.")'>
                 <div class='single-blog-post style-2 mb-5'>
                     <!-- Blog Thumbnail -->
                     <div class='blog-thumbnail'>
