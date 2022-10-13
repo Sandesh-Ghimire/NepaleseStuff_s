@@ -146,23 +146,23 @@
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(25)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
+                                                <a href="#"><img src="img/bg-img/Pokhara-valley-nepal.jpg" alt="thumbnail" class="thumbnail-small"></a>
                                             </div>
 
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Top highest peaks</a>
+                                                <a href="#" class="post-title">Cherrapunji of Nepal: Pokhara</a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
+                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(24)">
                                         <div class="single-blog-post d-flex style-4">
                                             <!-- Blog Thumbnail -->
                                             <div class="blog-thumbnail">
@@ -172,7 +172,7 @@
                                             <!-- Blog Content -->
                                             <div class="blog-content">
                                                 <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nepalese Culture and Tradition</a>
+                                                <a href="#" class="post-title">Culture of Nepalese</a>
                                             </div>
                                         </div>
                                     </div>

@@ -1,5 +1,7 @@
 <?php 
     
+    session_start();
+
     if(!isset($_SESSION['admin_email'])){
         echo "<script>window.open('login.php','_self')</script>";
     }
@@ -33,8 +35,6 @@
                             <tr>
                                 <th> <center>ID</center> </th>
                                 <th> <center>Title</center> </th>
-                                <th> <center>Arthur</center> </th>
-                                <th> <center>Date</center> </th>
                                 <th> <center>Delete</center> </th>
                                 <th> <center>Edit</center> </th>
                             </tr>
@@ -45,10 +45,6 @@
          
                             
                             <tr>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
                                 <td> </td>
                                 <td> </td>
                                 <td> 

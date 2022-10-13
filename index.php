@@ -338,7 +338,7 @@
                                                     <i class=\"fa-solid fa-circle-user dropbtn\" onclick=\"myFunction()\" id=\"profile-icon\" ></i>
                                                     <div id=\"myDropdown\" class=\"userdropdown-content py-2\">
                                                         <a style='text-transform:none;'><i class=\"fa-solid fa-user\"></i>".$_SESSION['username']."</a>
-                                                        <a onclick=getDynamicContent('signUpIn/playlist.php') style='cursor:pointer;'><i class=\"fa-solid fa-layer-group\"></i>Activity Log</a>
+                                                        <a onclick=getDynamicContent('signUpIn/log.php') style='cursor:pointer;'><i class=\"fa-solid fa-layer-group\"></i>Activity Log</a>
                                                         <a onclick=getDynamicContent('signUpIn/settings.php') style='cursor:pointer;'><i class=\"fa-solid fa-gear\"></i>Settings</a>
 
 

@@ -114,10 +114,13 @@
         } else {
             // Final Query
             $query = "INSERT INTO `blogtable` (`title`, `author`, `date`, `blogcon`, `img1`, `img2`, `img3`, `img4`, `img5`,`tag1`, `tag2`, `tag3`, `tag4`, `tag5`, `userViewCount`, `guestViewCount`, `reportCount`, `bookmarkCount`, `upvoteCount`, `downvoteCount`) VALUES ('$val[0]', '$val[1]', '$val[2]', '$val[3]', '$val[4]',' $val[5]',' $val[6]', '$val[7]', '$val[8]', '$val[9]', '$val[10]', '$val[11]', '$val[12]', '$val[13]', '$val[14]', '$val[15]', '$val[16]', '$val[17]', '$val[18]', '$val[19]')";
-            mysqli_query($con, $query);
-            
-            // Success Message
-            echo "<script>alert('Successfull');</script>";
+            if (mysqli_query($con, $query)) {
+                // Success Message
+                echo "<script>alert('Successfully Inserted Blog');</script>";
+            } else {
+                // Error Message
+                echo "<script>alert('Error Uplaoding Blog');</script>";
+            }
         }
     }
 
