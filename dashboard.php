@@ -97,7 +97,7 @@
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <a class="nav-item nav-link active" id="nav1" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">Featured</a>
                         <a name="" class="nav-item nav-link back-slash-separator" style="pointer-events: none;">/</a>
-                        <a class="nav-item nav-link" id="nav2" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Latest</a>
+                        <a class="nav-item nav-link" id="nav2" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Adored</a>
                         <a name="" class="nav-item nav-link back-slash-separator" style="pointer-events: none;">/</a>
                         <a class="nav-item nav-link" id="nav3" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">Popular</a>
                     </div>
@@ -143,26 +143,26 @@
                         <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav2">
                             <div class="row">
                                 
-                                <?= getBigPost($latestBlog[0]); ?>
+                                <?= getBigPost($lovedBlog[0]); ?>
 
-                                <?= getBigPost($latestBlog[1]); ?>
+                                <?= getBigPost($lovedBlog[1]); ?>
 
-                                <?= getBigPost($latestBlog[2]); ?>
+                                <?= getBigPost($lovedBlog[2]); ?>
 
                                 <!-- Minimized Blog -->
                                 <div class="row mt-4">
                                     
-                                    <?= getSmallPost($latestBlog[3]) ?>
+                                    <?= getSmallPost($lovedBlog[3]) ?>
 
-                                    <?= getSmallPost($latestBlog[4]) ?>
+                                    <?= getSmallPost($lovedBlog[4]) ?>
 
-                                    <?= getSmallPost($latestBlog[5]) ?>
+                                    <?= getSmallPost($lovedBlog[5]) ?>
 
-                                    <?= getSmallPost($latestBlog[6]) ?>
+                                    <?= getSmallPost($lovedBlog[6]) ?>
 
-                                    <?= getSmallPost($latestBlog[7]) ?>
+                                    <?= getSmallPost($lovedBlog[7]) ?>
 
-                                    <?= getSmallPost($latestBlog[8]) ?>
+                                    <?= getSmallPost($lovedBlog[8]) ?>
                                     
                                 </div>
                             </div>
@@ -288,21 +288,21 @@
     <div class="container-fluid" style="padding: 0 6%;">
         <div class="row">
 
-            <?= getOtherBlog($lovedBlog[0]) ?>
+            <?= getOtherBlog($latestBlog[0]) ?>
             
-            <?= getOtherBlog($lovedBlog[1]) ?>
+            <?= getOtherBlog($latestBlog[1]) ?>
 
-            <?= getOtherBlog($lovedBlog[2]) ?>
+            <?= getOtherBlog($latestBlog[2]) ?>
 
-            <?= getOtherBlog($lovedBlog[3]) ?>
+            <?= getOtherBlog($latestBlog[3]) ?>
 
-            <?= getOtherBlog($lovedBlog[4]) ?>
+            <?= getOtherBlog($latestBlog[4]) ?>
 
-            <?= getOtherBlog($lovedBlog[5]) ?>
+            <?= getOtherBlog($latestBlog[5]) ?>
 
-            <?= getOtherBlog($lovedBlog[6]) ?>
+            <?= getOtherBlog($latestBlog[6]) ?>
 
-            <?= getOtherBlog($lovedBlog[7]) ?>
+            <?= getOtherBlog($latestBlog[7]) ?>
             
             <!-- Load More Button -->
             <!-- <div class="col-12">

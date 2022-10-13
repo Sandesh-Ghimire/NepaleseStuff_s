@@ -18,7 +18,7 @@
         $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
         $result = mysqli_query($con, $query);
         $blogRow = mysqli_fetch_assoc($result);
-        if ($blogRow['visitedBlog'] == NULL) {
+        if (isset($blogRow['visitedBlog'])) {
             $query = "INSERT INTO $tablename (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES ($id, 0, 0, 0, 0)";
             mysqli_query($con, $query);
         }
@@ -47,6 +47,84 @@
     $bookmarkCount = (int)$row['bookmarkCount'];
     $upvoteCount = (int)$row['upvoteCount'];
     $downvoteCount = (int)$row['downvoteCount'];
+
+    // Get All Blog Id
+    // $query = "SELECT `blogId` FROM `blogtable`";
+    // $stmt = $pdo->prepare($query);
+    // $stmt->execute();
+    
+    // Variables
+    $arr = [];
+    $arr1 = [];
+    $arr2 = [];
+    $arr3 = [];
+    $arr4 = [];
+    $arr5 = [];
+    $relatedTopicBlogId = [];
+
+    // Get Total Number of Blogs
+    $query = "SELECT * FROM `blogtable` ORDER BY `blogId` DESC LIMIT 1";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    $totalNumOfBlog = $row['blogId'];
+
+    // Initializing Array
+    $i=0;
+    while ($i<=$totalNumOfBlog) {
+        $arr[$i] = 0;
+        $i++;
+    }
+
+    // Query for tag 1
+    $query = "SELECT * FROM `blogtable` WHERE (`tag1` = '$tag1') OR (`tag2` = '$tag1') OR (`tag3` = '$tag1') OR (`tag4` = '$tag1') OR (`tag5` = '$tag1')";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) $arr[$row['blogId']]++;
+
+    // Query for tag 2
+    $query = "SELECT * FROM `blogtable` WHERE (`tag1` = '$tag2') OR (`tag2` = '$tag2') OR (`tag3` = '$tag2') OR (`tag4` = '$tag2') OR (`tag5` = '$tag2')";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) $arr[$row['blogId']]++;
+
+    // Query for tag 3
+    $query = "SELECT * FROM `blogtable` WHERE (`tag1` = '$tag3') OR (`tag2` = '$tag3') OR (`tag3` = '$tag3') OR (`tag4` = '$tag3') OR (`tag5` = '$tag3')";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) $arr[$row['blogId']]++;
+
+    // Query for tag 4
+    $query = "SELECT * FROM `blogtable` WHERE (`tag1` = '$tag4') OR (`tag2` = '$tag4') OR (`tag3` = '$tag4') OR (`tag4` = '$tag4') OR (`tag5` = '$tag4')";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) $arr[$row['blogId']]++;
+
+    // Query for tag 5
+    $query = "SELECT * FROM `blogtable` WHERE (`tag1` = '$tag5') OR (`tag2` = '$tag5') OR (`tag3` = '$tag5') OR (`tag4` = '$tag5') OR (`tag5` = '$tag5')";
+    $stmt = $pdo->prepare($query);
+    $stmt->execute();
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) $arr[$row['blogId']]++;
+
+    // Checking for highest valeus
+    for ($i=0; $i<=$totalNumOfBlog; $i++) {
+        if ($arr[$i]==5) {
+            array_push($arr5, $i);
+        } else if ($arr[$i]==4) {
+            array_push($arr4, $i);
+        } else if ($arr[$i]==3) {
+            array_push($arr3, $i);
+        } else if ($arr[$i]==2) {
+            array_push($arr2, $i);
+        } else if ($arr[$i]==1) {
+            array_push($arr1, $i);
+        }
+    }
 
 ?>
 
@@ -100,6 +178,43 @@
         color: #555;
     }
 
+    .blog-img {
+        overflow: hidden;
+        border-radius: 8px;
+        max-height: 520px;
+        max-width: 100% !important;
+    }
+
+    .blog-content-end {
+        font-size: 16px;
+        font-weight: 500;
+        color: #444;
+        text-align: end;
+        line-height: 1.3;
+        padding-bottom: 8px;
+    }
+
+    .stat-widget {
+        display: block;
+        overflow: hidden;
+        height: auto !important;
+    }
+
+    table { 
+        border-collapse: collapse !important;
+    }
+
+    tr.chngBgClr {
+        border-bottom: 3px solid black !important;
+    }
+
+    .chngBgClr:hover {
+        background-color: #eee;
+        cursor: pointer;
+    }
+
+    /* Media Query */
+
     @media only screen and (min-width: 992px) {
         .blog-container {
             padding: 21px 55px 21px 55px;
@@ -118,23 +233,6 @@
         }
     }
 
-    .blog-img {
-        overflow: hidden;
-        border-radius: 8px;
-        max-height: 520px;
-        max-width: 100% !important;
-    }
-
-    .blog-content-end {
-        font-size: 16px;
-        font-weight: 500;
-        color: #444;
-        text-align: end;
-        line-height: 1.3;
-        padding-bottom: 8px;
-    }
-
-    /* Media Query */
     @media only screen and (max-width: 992px) and (min-width: 377px) {
         .blog-container-footer i {
             font-size: 18px;
@@ -246,15 +344,77 @@
                             <div class="single-widget-area add-widget">
                                 <div id="ad-widget">
                                     <a href="#">
-                                        <img src="img/bg-img/add3.png" alt="" width="100%">
+                                        <img src="img/bg-img/add3.png" alt="ad" width="100%">
                                     </a>
                                 </div>
                             </div>
                         </div>
                         <!-- Related Topics -->
                         <div class="col-12 col-sm-6 col-lg-12" style="margin-top: 8px;">
-                            <div class="single-widget-area stat-widget">
-                                <h6>Related Topics</h6>
+                            <div class="single-widget-area stat-widget" style="display: block;">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <thead style="border-bottom: 3px solid black !important;">
+                                            <th>
+                                                <h4>Related Topics</h4> <hr style="border: 1px solid black; margin-bottom: 0; padding-bottom: 0; border-radius: 50%;">
+                                            </th>
+                                        </thead>
+                                        
+                                        <?php
+                                            $i = 0;
+                                            $arr5count = count($arr5);
+                                            for ($index=0; $index<$arr5count; $index++) {
+                                                if ($i<5) if ($arr5[$index]!=$id) array_push($relatedTopicBlogId, $arr5[$index]);
+                                                else break;
+                                                $i++;
+                                            }
+                                            if ($i<5) {
+                                                $arr4count = count($arr4);
+                                                for ($index=0; $index<$arr4count; $index++) {
+                                                    if ($i<5) if ($arr4[$index]!=$id) array_push($relatedTopicBlogId, $arr4[$index]);
+                                                    else break;
+                                                    $i++;
+                                                }
+                                                if ($i<5) {
+                                                    $arr3count = count($arr3);
+                                                    for ($index=0; $index<$arr3count; $index++) {
+                                                        if ($i<5) if ($arr3[$index]!=$id) array_push($relatedTopicBlogId, $arr3[$index]);
+                                                        else break;
+                                                        $i++;
+                                                    }
+                                                    if ($i<5) {
+                                                        $arr2count = count($arr2);
+                                                        for ($index=0; $index<$arr2count; $index++) {
+                                                            if ($i<5) if ($arr2[$index]!=$id) array_push($relatedTopicBlogId, $arr2[$index]);
+                                                            else break;
+                                                            $i++;
+                                                        }
+                                                        if ($i<5) {
+                                                            $arr1count = count($arr1);
+                                                            for ($index=0; $index<$arr1count; $index++) {
+                                                                if ($i<5) if ($arr1[$index]!=$id) array_push($relatedTopicBlogId, $arr1[$index]);
+                                                                else break;
+                                                                $i++;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            if ($i==0) {
+                                                // echo "<tr><td>".$arr1[$index]."</td></tr>";
+                                                echo "<tr></tr><tr><td>Nothing to show...</td></tr>";
+                                            } else {
+                                                for ($index=0; $index<count($relatedTopicBlogId); $index++) {
+                                                    $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
+                                                    $stmt = $pdo->prepare($query);
+                                                    $stmt->execute([$relatedTopicBlogId[$index]]);
+                                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                                    echo "<tr onclick='getBlogContent(".$relatedTopicBlogId[$index].")' class='chngBgClr'><td>".$row['title']."</td></tr>";
+                                                }
+                                            }
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
