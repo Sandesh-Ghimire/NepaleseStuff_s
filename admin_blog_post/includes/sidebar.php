@@ -33,30 +33,36 @@
     
     <div class="collapse navbar-collapse navbar-ex1-collapse"><!-- collapse navbar-collapse navbar-ex1-collapse begin -->
         <ul class="nav navbar-nav side-nav" id="adminSideNav"><!-- nav navbar-nav side-nav begin -->
-            <li><!-- li begin -->
-                <a href="index.php?dashboard"><!-- a href begin --> 
+            <li>
+                <a href="index.php?dashboard">
                         <i class="fa fa-fw fa-dashboard"></i>&nbsp;&nbsp;Dashboard
-                </a><!-- a href finish -->
-            </li><!-- li finish -->
+                </a>
+            </li>
+
+            <li>
+                <a href="index.php?featured_blog"> 
+                    <i class="fa fa-star" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Featured Blog 
+                </a>
+            </li>
             
-            <li><!-- li begin -->
+            <li>
                 <a href="index.php?insert_blog"> 
                     <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Insert Blog 
                 </a>
-            </li><!-- li finish -->
+            </li>
 
-            <li><!-- li begin -->
+            <li>
                 <a href="index.php?view_blog">
                     <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Blog 
                 </a>
-            </li><!-- li finish -->
+            </li>
 
             
-            <li><!-- li begin -->
+            <li>
                 <a href="logout.php"><!-- a href begin -->
                     <i class="fa fa-fw fa-power-off"></i>&nbsp;&nbsp;&nbsp;Log Out
-                </a><!-- a href finish -->
-            </li><!-- li finish -->
+                </a>
+            </li>
             
         </ul><!-- nav navbar-nav side-nav finish -->
     </div><!-- collapse navbar-collapse navbar-ex1-collapse finish -->

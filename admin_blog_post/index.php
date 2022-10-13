@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="css/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.2/js/bootstrap.min.js">
 </head>
 <body>
 
@@ -48,7 +50,11 @@
                         
                         include("view_blog.php");
                         
-                 } 
+                 }   if(isset($_GET['featured_blog'])){
+                        
+                        include("featured_blog.php");
+                    
+                } 
                 
         
                 ?>

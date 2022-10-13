@@ -314,10 +314,6 @@
             selector: 'textarea'
         });
     </script>
-    <script>
-        // document.getElementById('mceu_30').innerText = "Powered by Nepalese Stuff";
-        alert(document.getElementById('mceu_30').innerText);
-    </script>
 </body>
 
 </html>

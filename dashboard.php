@@ -1,5 +1,90 @@
 <?php
+
     include "functions/dashboard.php";
+    include "functions/variables.php";
+    include "functions/connect.php";
+
+    // Function to display big post
+    function getBigPost($id) {
+        global $pdo;
+        $query = "SELECT * FROM `blogtable` WHERE `blogId` = $id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $html = "<div class='col-12 col-sm-4' onclick='getBlogContent(".$id.")'>
+                <div class='single-blog-post style-2'>
+
+                    <!-- Blog Thumbnail -->
+                    <div class='blog-thumbnail'>
+                        <a name=''><img src='img/blog-img/".$row['img1']."' alt='thumbnail' class='thumbnail-big'></a>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class='blog-content'>
+                        <span class='post-date'>".$row['date']."</span>
+                        <span class='post-author'>- <span class='value'>".$row['author']."</span></span>
+                        <a name='' class='post-title'>".$row['title']."</a>
+                    </div>
+                </div>
+            </div>";
+
+        return $html;
+    }
+
+    // Function to display small post
+    function getSmallPost($id) {
+        global $pdo;
+        $query = "SELECT * FROM `blogtable` WHERE `blogId` = $id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $html = "<div class='col-12 col-sm-6 col-lg-6 col-xl-4' onclick='getBlogContent(".$id.")'>
+                <div class='single-blog-post d-flex style-4'>
+                    <!-- Blog Thumbnail -->
+                    <div class='blog-thumbnail'>
+                        <a name=''><img src='img/blog-img/".$row['img1']."' alt='thumbnail' class='thumbnail-small'></a>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class='blog-content'>
+                        <span class='post-date'>".$row['date']."</span>
+                        <a name='' class='post-title'>".$row['title']."</a>
+                    </div>
+                </div>
+            </div>";
+
+        return $html;
+    }
+
+    // Other Blogs
+    function getOtherBlog($id) {
+        global $pdo;
+        $query = "SELECT * FROM `blogtable` WHERE `blogId` = $id";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $html = "<div class='col-12 col-sm-6 col-lg-3'>
+                <div class='single-blog-post style-2 mb-5'>
+                    <!-- Blog Thumbnail -->
+                    <div class='blog-thumbnail'>
+                        <a name=''><img src='img/blog-img/".$row['img1']."' alt='thumbnail' class='thumbnail-big'></a>
+                    </div>
+
+                    <!-- Blog Content -->
+                    <div class='blog-content'>
+                        <span class='post-date'>".$row['date']."</span>
+                        <span class='post-author'>- <span class='value'>".$row['author']."</span></span>
+                        <a name='' class='post-title'>".$row['title']."</a>
+                    </div>
+                </div>
+            </div>";
+
+        return $html;
+    }
+
 ?>
 
 <!-- ##### Intro News Area Start ##### -->
@@ -28,154 +113,28 @@
                         <!-- nav-1 -->
                         <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav1">
                             <div class="row">
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4" onclick="getBlogContent(9)">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a name=""><img src="img/thumbnail/thumbnail1.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
+                                
+                                <?= getBigPost($featuredBlog[0]); ?>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Jan 20, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a name="" class="post-title">Nepal: 8th Wonder of the World</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($featuredBlog[1]); ?>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4" onclick="getBlogContent(10)">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a name=""><img src="img/thumbnail/thumbnail4.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 24, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a name="" class="post-title">Kathmandu: The City of Temples</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4" onclick="getBlogContent(11)">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a name=""><img src="img/thumbnail/thumbnail2.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Oct 10, 2021</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a name="" class="post-title">Manang & Mustang: The Tale of Two Heaven</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($featuredBlog[2]); ?>
 
                                 <!-- Minimized Blog -->
                                 <div class="row mt-4">
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(12)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/16.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    
+                                    <?= getSmallPost($featuredBlog[3]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Explore Majestic Nepal</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($featuredBlog[4]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(13)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/thrill.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($featuredBlog[5]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Jan 27, 2019</span>
-                                                <a href="#" class="post-title">Feel the thrill: Rafting in Nepal</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($featuredBlog[6]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(14)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($featuredBlog[7]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Feb 2, 2021</span>
-                                                <a href="#" class="post-title">Himalayas in Nepal</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($featuredBlog[8]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(15)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/19.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">March 21, 2018</span>
-                                                <a href="#" class="post-title">Greenery in Nepal</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(25)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/Pokhara-valley-nepal.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Cherrapunji of Nepal: Pokhara</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4" onclick="getBlogContent(24)">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/20.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Culture of Nepalese</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -183,154 +142,28 @@
                         <!-- nav-2 -->
                         <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav2">
                             <div class="row">
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/latest1.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
+                                
+                                <?= getBigPost($latestBlog[0]); ?>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Jan 20, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">10 New Tourist Destinations in Nepal</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($latestBlog[1]); ?>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/latest3.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 24, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title"> Nepal Reopens Bardiya National Park for Tourists! </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/ancient.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Oct 10, 2021</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Ancient Nepal and its culture.</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($latestBlog[2]); ?>
 
                                 <!-- Minimized Blog -->
                                 <div class="row mt-4">
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/16.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    
+                                    <?= getSmallPost($latestBlog[3]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Explore Pokhara</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($latestBlog[4]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($latestBlog[5]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Jan 27, 2019</span>
-                                                <a href="#" class="post-title">Feel the thrill</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($latestBlog[6]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($latestBlog[7]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Feb 2, 2021</span>
-                                                <a href="#" class="post-title">Himalayas</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/19.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">March 21, 2018</span>
-                                                <a href="#" class="post-title">Greenary</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Top highest peaks</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/20.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nepalese Culture</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($latestBlog[8]) ?>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -338,154 +171,28 @@
                         <!-- nav-3 -->
                         <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav3">
                             <div class="row">
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/latest2.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
+                                
+                                <?= getBigPost($popularBlog[0]); ?>
 
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Jan 20, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Nepali Climbers Make ‘History’ with First-ever K2 Winter Summit! </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($popularBlog[1]); ?>
 
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/latest3.png" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">June 24, 2022</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title"> Nepali Government Incurs NPR 11.4 Billion in Arrears in FY 2019/20.</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Single News Area -->
-                                <div class="col-12 col-sm-4">
-                                    <div class="single-blog-post style-2">
-                                        <!-- Blog Thumbnail -->
-                                        <div class="blog-thumbnail">
-                                            <a href="#"><img src="img/thumbnail/thumbnail6.jpg" alt="thumbnail" class="thumbnail-big"></a>
-                                        </div>
-
-                                        <!-- Blog Content -->
-                                        <div class="blog-content">
-                                            <span class="post-date">Oct 10, 2021</span>
-                                            <span class="post-author ">- <span class="value ">Admin</span></span>
-                                            <a href="#" class="post-title">Rolpa: Remote Place of Nepal</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?= getBigPost($popularBlog[2]); ?>
 
                                 <!-- Minimized Blog -->
                                 <div class="row mt-4">
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/16.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Explore Nepal</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($popularBlog[3]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/b.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($popularBlog[4]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Jan 27, 2019</span>
-                                                <a href="#" class="post-title">Feel the thrill</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($popularBlog[5]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/latest2.jpg" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
+                                    <?= getSmallPost($popularBlog[6]) ?>
 
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">Feb 2, 2021</span>
-                                                <a href="#" class="post-title">Himalayas</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($popularBlog[7]) ?>
 
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/19.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">March 21, 2018</span>
-                                                <a href="#" class="post-title">Greenary</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/18.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2022</span>
-                                                <a href="#" class="post-title">Top highest peaks</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Single News Area -->
-                                    <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
-                                        <div class="single-blog-post d-flex style-4">
-                                            <!-- Blog Thumbnail -->
-                                            <div class="blog-thumbnail">
-                                                <a href="#"><img src="img/bg-img/20.png" alt="thumbnail" class="thumbnail-small"></a>
-                                            </div>
-
-                                            <!-- Blog Content -->
-                                            <div class="blog-content">
-                                                <span class="post-date">June 20, 2018</span>
-                                                <a href="#" class="post-title">Nepalese Culture</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?= getSmallPost($popularBlog[8]) ?>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -581,147 +288,28 @@
     <div class="container-fluid" style="padding: 0 6%;">
         <div class="row">
 
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/5.png" alt="" class="thumbnail-big"></a>
-                    </div>
+            <?= getOtherBlog($lovedBlog[0]) ?>
+            
+            <?= getOtherBlog($lovedBlog[1]) ?>
 
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">June 20, 2022</span>
-                        <span class="post-author ">- <span class="value ">Admin</span></span>
-                        <a href="#" class="post-title">7 Days Trip To Nepal From Mumbai Gave Us An Enthralling Experience Of A Lifetime!</a>
-                    </div>
-                </div>
-            </div>
+            <?= getOtherBlog($lovedBlog[2]) ?>
 
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/6.png" alt="" class="thumbnail-big"></a>
-                    </div>
+            <?= getOtherBlog($lovedBlog[3]) ?>
 
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">Jan 01, 2022</span>
-                        <span class="post-author ">- <span class="value ">Sandesh Ghimire</span></span>
-                        <a href="#" class="post-title">34 Things Nobody Tells You About Traveling in Nepal</a>
-                    </div>
-                </div>
-            </div>
+            <?= getOtherBlog($lovedBlog[4]) ?>
 
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/4.png" alt="" class="thumbnail-big"></a>
-                    </div>
+            <?= getOtherBlog($lovedBlog[5]) ?>
 
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">June 20, 2019</span>
-                        <span class="post-author ">- <span class="value ">Anmol Aran</span></span>
-                        <a href="#" class="post-title">Enjoy an exhilarating flight aboard an ultralight aircraft, provided by top local operator Avia Club Nepal</a>
-                    </div>
-                </div>
-            </div>
+            <?= getOtherBlog($lovedBlog[6]) ?>
 
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/thumbnail/thumbnail5.jpg" alt="" class="thumbnail-big"></a>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">Feb 20, 2018</span>
-                        <span class="post-author ">- <span class="value ">Niraj Giri</span></span>
-                        <a href="#" class="post-title">Bungi jump in Nepal</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/8.png" alt="" class="thumbnail-big"></a>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">June 20, 2022</span>
-                        <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Visit pagoda Pokhara.</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/9.png" alt="" class="thumbnail-big"></a>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">Sep 2, 2022</span>
-                        <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Mardi Himal Trekking in Nepal</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/latest2.jpg" alt="" class="thumbnail-big"></a>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">Sep 2, 2022</span>
-                        <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Nepali Climbers Make ‘History’ with First-ever K2 Winter Summit!</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single News Area -->
-            <div class="col-12 col-sm-6 col-lg-3">
-                <div class="single-blog-post style-2 mb-5">
-                    <!-- Blog Thumbnail -->
-                    <div class="blog-thumbnail">
-                        <a href="#"><img src="img/bg-img/ancient.jpg" alt="" class="thumbnail-big"></a>
-                    </div>
-
-                    <!-- Blog Content -->
-                    <div class="blog-content">
-                        <span class="post-date">Sep 2, 2022</span>
-                        <span class="post-author ">- <span class="value">Admin</span></span>
-                        <a href="#" class="post-title">Ancient Nepal and its culture.</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
+            <?= getOtherBlog($lovedBlog[7]) ?>
+            
+            <!-- Load More Button -->
+            <!-- <div class="col-12">
                 <div class="load-more-button text-center">
                     <a href="#" class="btn newsbox-btn">Load More</a>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
