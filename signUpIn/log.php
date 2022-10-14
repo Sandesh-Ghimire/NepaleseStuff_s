@@ -75,9 +75,10 @@
                     <?php
 
                         // SQL for user data
-                        $index = 1;
                         $query = "SELECT `visitedBlog` FROM $tablename WHERE `bookmarkedBlog` = 1";
                         $result = mysqli_query($con, $query);
+
+                        $index = 1;
                         while($row = mysqli_fetch_assoc($result)) {
                             $newBlogId = $row['visitedBlog'];
 
@@ -85,6 +86,8 @@
                             $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
                             $stmt = $pdo->prepare($query);
                             $stmt->execute([$newBlogId]);
+                            
+                            // Display Blog Data
                             while ($blogRow = $stmt->fetch(PDO::FETCH_ASSOC)) {
                                 echo "<tr onclick=\"getBlogContent(".$blogRow['blogId'].")\">
                                         <th scope=\"row\">$index</th>
@@ -92,14 +95,18 @@
                                         <td>".$blogRow['author']."</td>
                                         <td><img src=\"img/blog-img/".$blogRow['img1']."\" alt=\"thumbnail\" class=\"log-img\"></td>
                                     </tr>";
-                                $index++;
                             }
-                        }
+                            $index++;
+                        };
                     ?>
                     <!-- PHP Script Ends Here -->
                     </tbody>
                 </table>
-
+                <?php
+                    if (mysqli_num_rows($result)==0) {
+                        echo "<center><h4 style='margin-bottom:55px'>Nothing to show...</h4></center>";
+                    }
+                ?>
             </div>
         </div>
 
@@ -122,9 +129,10 @@
                     <?php
 
                         // SQL for user data
-                        $index = 1;
                         $query = "SELECT `visitedBlog` FROM $tablename WHERE `upvotedBlog` = 1";
                         $result = mysqli_query($con, $query);
+
+                        $index = 1;
                         while($row = mysqli_fetch_assoc($result)) {
                             $newBlogId = $row['visitedBlog'];
 
@@ -139,14 +147,18 @@
                                         <td>".$blogRow['author']."</td>
                                         <td><img src=\"img/blog-img/".$blogRow['img1']."\" alt=\"thumbnail\" class=\"log-img\"></td>
                                     </tr>";
-                                $index++;
                             }
+                            $index++;
                         }
                     ?>
                     <!-- PHP Script Ends Here -->
                     </tbody>
                 </table>
-
+                <?php
+                    if (mysqli_num_rows($result)==0) {
+                        echo "<center><h4 style='margin-bottom:55px'>Nothing to show...</h4></center>";
+                    }
+                ?>
             </div>
         </div>
 
@@ -169,9 +181,10 @@
                     <?php
 
                         // SQL for user data
-                        $index = 1;
                         $query = "SELECT `visitedBlog` FROM $tablename WHERE `downvotedBlog` = 1";
                         $result = mysqli_query($con, $query);
+
+                        $index = 1;
                         while($row = mysqli_fetch_assoc($result)) {
                             $newBlogId = $row['visitedBlog'];
 
@@ -186,14 +199,18 @@
                                         <td>".$blogRow['author']."</td>
                                         <td><img src=\"img/blog-img/".$blogRow['img1']."\" alt=\"thumbnail\" class=\"log-img\"></td>
                                     </tr>";
-                                $index++;
                             }
+                            $index++;
                         }
                     ?>
                     <!-- PHP Script Ends Here -->
                     </tbody>
                 </table>
-
+                <?php
+                    if (mysqli_num_rows($result)==0) {
+                        echo "<center><h4 style='margin-bottom:55px'>Nothing to show...</h4></center>";
+                    }
+                ?>
             </div>
         </div>
 
@@ -216,9 +233,10 @@
                     <?php
 
                         // SQL for user data
-                        $index = 1;
                         $query = "SELECT `visitedBlog` FROM $tablename";
                         $result = mysqli_query($con, $query);
+
+                        $index =1;
                         while($row = mysqli_fetch_assoc($result)) {
                             $newBlogId = $row['visitedBlog'];
 
@@ -233,14 +251,18 @@
                                         <td>".$blogRow['author']."</td>
                                         <td><img src=\"img/blog-img/".$blogRow['img1']."\" alt=\"thumbnail\" class=\"log-img\"></td>
                                     </tr>";
-                                $index++;
                             }
+                            $index++;
                         }
                     ?>
                     <!-- PHP Script Ends Here -->
                     </tbody>
                 </table>
-
+                <?php
+                    if (mysqli_num_rows($result)==0) {
+                        echo "<center><h4 style='margin-bottom:55px'>Nothing to show...</h4></center>";
+                    }
+                ?>
             </div>
         </div>
     </div>

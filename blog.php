@@ -18,7 +18,7 @@
         $query = "SELECT * FROM $tablename WHERE `visitedBlog` = $id";
         $result = mysqli_query($con, $query);
         $blogRow = mysqli_fetch_assoc($result);
-        if (isset($blogRow['visitedBlog'])) {
+        if (!isset($blogRow['visitedBlog'])) {
             $query = "INSERT INTO $tablename (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES ($id, 0, 0, 0, 0)";
             mysqli_query($con, $query);
         }
@@ -217,7 +217,9 @@
     }
 
     .chngBgClr:hover {
+        margin: auto 5px;
         background-color: #eee;
+        border-radius: 34px;
         cursor: pointer;
     }
 
@@ -408,7 +410,6 @@
                                             }
                                         }
                                         if ($i==0) {
-                                            // echo "<tr><td>".$arr1[$index]."</td></tr>";
                                             echo "<li></li><li>Nothing to show...</li>";
                                         } else {
                                             $numOfRelatedTopics = count($relatedTopicBlogId);
@@ -417,9 +418,10 @@
                                                 $stmt = $pdo->prepare($query);
                                                 $stmt->execute([$relatedTopicBlogId[$index]]);
                                                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
                                                 echo "<li onclick='getBlogContent(".$relatedTopicBlogId[$index].")' class='chngBgClr'><span>".$row['title']."</span></li>";
                                                 if ($index != $numOfRelatedTopics-1) {
-                                                    echo "<center><hr style='border: 1px solid #bbb; width: 89%; margin: 0; padding: 0;'></center>";
+                                                    echo "<center><hr style='border: 1px solid #bbb; width: 83%; margin: 0; padding: 0;'></center>";
                                                 }
                                             }
                                         }

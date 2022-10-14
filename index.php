@@ -236,16 +236,16 @@
                                         </div>
                                     </li>
                                     <!-- <li><a href="#">History</a>
-                                <ul class="dropdown">
-                                    <center>
-                                        <li><a href="index.php">Home</a></li>
-                                        <li><a href="catagory.php">Catagory</a></li>
-                                        <li><a href="single-post.php">Single Post</a></li>
-                                        <li><a href="contact.php">Contact</a></li>
-                                        <li><a href="elements.php">Elements</a></li>
-                                    </center>
-                                </ul>
-                            </li> -->
+                                        <ul class="dropdown">
+                                            <center>
+                                                <li><a href="index.php">Home</a></li>
+                                                <li><a href="catagory.php">Catagory</a></li>
+                                                <li><a href="single-post.php">Single Post</a></li>
+                                                <li><a href="contact.php">Contact</a></li>
+                                                <li><a href="elements.php">Elements</a></li>
+                                            </center>
+                                        </ul>
+                                    </li> -->
                                     <li><a href="#">Topics</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4">
@@ -322,14 +322,59 @@
                                             </ul>
                                         </div>
                                     </li>
+
+                                    <!-- Search Area -->
                                     <li id="search-li">
                                         <form method="post" id="search-form">
-                                            <input type="text" class="textbox" placeholder="Search...">
-                                            <button type="submit" class="btn" id="search-btn">
+                                            <input type="text" class="textbox" id="searchInputField" name="searchInputField" placeholder="Search...">
+                                            <button type="button" class="btn" id="search-btn">
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
+
+                                            <style>
+                                                .search-result-container {
+                                                    position: relative;
+                                                    /* display: none; */
+                                                }
+                                                /*#search-form:focus + .search-result-container,
+                                                #search-form:active + .search-result-container,
+                                                #search-form:hover + .search-result-container {
+                                                    display: block;
+                                                } */
+                                                .search-result-div {
+                                                    position: absolute;
+                                                    top: 3px;
+                                                    background-color: white;
+                                                    width: 100%;
+                                                }
+                                                #search-result-ul {
+                                                    list-style: none;
+                                                    padding: 0 !important;
+                                                    border-radius: 8px;
+                                                    border: 2px solid #eee;
+                                                }
+                                                #search-result-ul li {
+                                                    padding: 5px 21px !important;
+                                                }
+                                                #search-result-ul li:hover {
+                                                    background-color: #eee;
+                                                    border-radius: 55px;
+                                                }
+                                                
+                                            </style>
+
+                                            <!-- Search Result Gets Inserted Here -->
+                                            <div class="search-result-container">
+                                                <div class="search-result-div">
+                                                    <ul style="color: #000;" id="search-result-ul">
+                                                        <!-- <li>HEHE</li> -->
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </form>
                                     </li>
+
+                                    <!-- User Profile Button -->
                                     <li>
                                         <?php 
                                             if (isset($_SESSION['userId'])) {
@@ -508,6 +553,23 @@
                 }
             });
         }
+
+        // Search AJAX Request
+        $('#search-li').on('keypress', () => {
+            $.ajax({
+                url: "search.php",
+                type: "POST",
+                data: {
+                    "query": $('#searchInputField').val()
+                },
+                success: function (response) {
+                    $('#search-result-ul').html(response);
+                },
+                error: function (response) {
+                    $('#search-result-ul').html("<li>Something went wrong...</li>");
+                }
+            });
+        });
 
     </script>
 
