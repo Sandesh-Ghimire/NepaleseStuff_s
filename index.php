@@ -115,7 +115,10 @@
             <li>|</li>
             <li><a onclick="getDynamicContent('contact.php')" class="setCursorPointer">Contact</a></li>
             <li>|</li>
-            <li><a onclick="getDynamicContent('forum/forum.php')" class="setCursorPointer">Forum</a></li>
+            <!-- <li><a onclick="getDynamicContent('forum/forum.php')" class="setCursorPointer">Forum</a></li> -->
+            <li><a href= 'forum/forum.php' class="setCursorPointer">Forum</a></li>
+
+
         </ul>
     </div>
 
