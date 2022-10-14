@@ -200,12 +200,20 @@
         height: auto !important;
     }
 
-    table { 
-        border-collapse: collapse !important;
+    .relatedTopicUl {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
-    tr.chngBgClr {
-        border-bottom: 3px solid black !important;
+    .relatedTopicUl li {
+        color: #555;
+        padding: 8px;
+        font-weight: 500;
+    }
+
+    .relatedTopicUl li:last-child {
+        margin-bottom: 13px;
     }
 
     .chngBgClr:hover {
@@ -352,69 +360,72 @@
                         <!-- Related Topics -->
                         <div class="col-12 col-sm-6 col-lg-12" style="margin-top: 8px;">
                             <div class="single-widget-area stat-widget" style="display: block;">
-                                <table class="table table-borderless">
-                                    <tbody>
-                                        <thead style="border-bottom: 3px solid black !important;">
-                                            <th>
-                                                <h4>Related Topics</h4> <hr style="border: 1px solid black; margin-bottom: 0; padding-bottom: 0; border-radius: 50%;">
-                                            </th>
-                                        </thead>
-                                        
-                                        <?php
-                                            $i = 0;
-                                            $arr5count = count($arr5);
-                                            for ($index=0; $index<$arr5count; $index++) {
-                                                if ($i<5) if ($arr5[$index]!=$id) array_push($relatedTopicBlogId, $arr5[$index]);
+                                <ul class="relatedTopicUl">
+                                    
+                                    <li>
+                                        <h4 style="margin-top: 5px;">Related Topics</h4>
+                                        <hr style="border: 1px solid black; margin: 5px 5px 5px 5px; padding-bottom: 0;">
+                                    </li>
+                                    
+                                    <?php
+                                        $i = 0;
+                                        $arr5count = count($arr5);
+                                        for ($index=0; $index<$arr5count; $index++) {
+                                            if ($i<5) if ($arr5[$index]!=$id) array_push($relatedTopicBlogId, $arr5[$index]);
+                                            else break;
+                                            $i++;
+                                        }
+                                        if ($i<5) {
+                                            $arr4count = count($arr4);
+                                            for ($index=0; $index<$arr4count; $index++) {
+                                                if ($i<5) if ($arr4[$index]!=$id) array_push($relatedTopicBlogId, $arr4[$index]);
                                                 else break;
                                                 $i++;
                                             }
                                             if ($i<5) {
-                                                $arr4count = count($arr4);
-                                                for ($index=0; $index<$arr4count; $index++) {
-                                                    if ($i<5) if ($arr4[$index]!=$id) array_push($relatedTopicBlogId, $arr4[$index]);
+                                                $arr3count = count($arr3);
+                                                for ($index=0; $index<$arr3count; $index++) {
+                                                    if ($i<5) if ($arr3[$index]!=$id) array_push($relatedTopicBlogId, $arr3[$index]);
                                                     else break;
                                                     $i++;
                                                 }
                                                 if ($i<5) {
-                                                    $arr3count = count($arr3);
-                                                    for ($index=0; $index<$arr3count; $index++) {
-                                                        if ($i<5) if ($arr3[$index]!=$id) array_push($relatedTopicBlogId, $arr3[$index]);
+                                                    $arr2count = count($arr2);
+                                                    for ($index=0; $index<$arr2count; $index++) {
+                                                        if ($i<5) if ($arr2[$index]!=$id) array_push($relatedTopicBlogId, $arr2[$index]);
                                                         else break;
                                                         $i++;
                                                     }
                                                     if ($i<5) {
-                                                        $arr2count = count($arr2);
-                                                        for ($index=0; $index<$arr2count; $index++) {
-                                                            if ($i<5) if ($arr2[$index]!=$id) array_push($relatedTopicBlogId, $arr2[$index]);
+                                                        $arr1count = count($arr1);
+                                                        for ($index=0; $index<$arr1count; $index++) {
+                                                            if ($i<5) if ($arr1[$index]!=$id) array_push($relatedTopicBlogId, $arr1[$index]);
                                                             else break;
                                                             $i++;
-                                                        }
-                                                        if ($i<5) {
-                                                            $arr1count = count($arr1);
-                                                            for ($index=0; $index<$arr1count; $index++) {
-                                                                if ($i<5) if ($arr1[$index]!=$id) array_push($relatedTopicBlogId, $arr1[$index]);
-                                                                else break;
-                                                                $i++;
-                                                            }
                                                         }
                                                     }
                                                 }
                                             }
-                                            if ($i==0) {
-                                                // echo "<tr><td>".$arr1[$index]."</td></tr>";
-                                                echo "<tr></tr><tr><td>Nothing to show...</td></tr>";
-                                            } else {
-                                                for ($index=0; $index<count($relatedTopicBlogId); $index++) {
-                                                    $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
-                                                    $stmt = $pdo->prepare($query);
-                                                    $stmt->execute([$relatedTopicBlogId[$index]]);
-                                                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
-                                                    echo "<tr onclick='getBlogContent(".$relatedTopicBlogId[$index].")' class='chngBgClr'><td>".$row['title']."</td></tr>";
+                                        }
+                                        if ($i==0) {
+                                            // echo "<tr><td>".$arr1[$index]."</td></tr>";
+                                            echo "<li></li><li>Nothing to show...</li>";
+                                        } else {
+                                            $numOfRelatedTopics = count($relatedTopicBlogId);
+                                            for ($index=0; $index<$numOfRelatedTopics; $index++) {
+                                                $query = "SELECT * FROM `blogtable` WHERE `blogId` = ?";
+                                                $stmt = $pdo->prepare($query);
+                                                $stmt->execute([$relatedTopicBlogId[$index]]);
+                                                $row = $stmt->fetch(PDO::FETCH_ASSOC);
+                                                echo "<li onclick='getBlogContent(".$relatedTopicBlogId[$index].")' class='chngBgClr'><span>".$row['title']."</span></li>";
+                                                if ($index != $numOfRelatedTopics-1) {
+                                                    echo "<center><hr style='border: 1px solid #bbb; width: 89%; margin: 0; padding: 0;'></center>";
                                                 }
                                             }
-                                        ?>
-                                    </tbody>
-                                </table>
+                                        }
+                                    ?>
+                                    
+                                </ul>
                             </div>
                         </div>
                     </div>
