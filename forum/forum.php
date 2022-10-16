@@ -10,6 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="main.js"></script>
 </head>
+<a href="../index.php" style="padding:20px;">Go back to home</a>
 
 <!-- Modal -->
 <div id="ReplyModal" class="modal fade" role="dialog">
