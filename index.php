@@ -323,6 +323,42 @@
                                         </div>
                                     </li>
 
+                                    <style>
+                                        .search-result-container {
+                                            position: relative;
+                                            /* display: none; */
+                                        }
+                                        /*#search-form:focus + .search-result-container,
+                                        #search-form:active + .search-result-container,
+                                        #search-form:hover + .search-result-container {
+                                            display: block;
+                                        } */
+                                        .search-result-div {
+                                            position: absolute;
+                                            top: 3px;
+                                            background-color: white;
+                                            width: 100%;
+                                        }
+                                        #search-result-ul {
+                                            list-style: none;
+                                            padding: 0 !important;
+                                            border-radius: 8px;
+                                            border: 2px solid #eee;
+                                        }
+                                        #search-result-ul li {
+                                            padding: 5px 21px !important;
+                                        }
+                                        #search-result-ul li:hover {
+                                            background-color: #eee;
+                                            border-radius: 55px;
+                                        }
+
+                                        #search-li:hover > #src {
+                                            display: block;
+                                        }
+                                        
+                                    </style>
+
                                     <!-- Search Area -->
                                     <li id="search-li">
                                         <form method="post" id="search-form">
@@ -331,40 +367,8 @@
                                                 <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
 
-                                            <style>
-                                                .search-result-container {
-                                                    position: relative;
-                                                    /* display: none; */
-                                                }
-                                                /*#search-form:focus + .search-result-container,
-                                                #search-form:active + .search-result-container,
-                                                #search-form:hover + .search-result-container {
-                                                    display: block;
-                                                } */
-                                                .search-result-div {
-                                                    position: absolute;
-                                                    top: 3px;
-                                                    background-color: white;
-                                                    width: 100%;
-                                                }
-                                                #search-result-ul {
-                                                    list-style: none;
-                                                    padding: 0 !important;
-                                                    border-radius: 8px;
-                                                    border: 2px solid #eee;
-                                                }
-                                                #search-result-ul li {
-                                                    padding: 5px 21px !important;
-                                                }
-                                                #search-result-ul li:hover {
-                                                    background-color: #eee;
-                                                    border-radius: 55px;
-                                                }
-                                                
-                                            </style>
-
                                             <!-- Search Result Gets Inserted Here -->
-                                            <div class="search-result-container">
+                                            <div class="search-result-container" id="src">
                                                 <div class="search-result-div">
                                                     <ul style="color: #000;" id="search-result-ul">
                                                         <!-- <li>HEHE</li> -->

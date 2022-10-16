@@ -52,8 +52,14 @@
             </li>
 
             <li>
-                <a href="index.php?view_blog">
-                    <i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Blog 
+                <a href="index.php?edit_blog">
+                    <i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Edit Blog 
+                </a>
+            </li>
+
+            <li>
+                <a href="index.php?delete_blog">
+                    <i class="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;Delete Blog 
                 </a>
             </li>
 

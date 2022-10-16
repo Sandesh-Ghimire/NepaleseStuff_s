@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2022 at 11:39 AM
+-- Generation Time: Oct 14, 2022 at 01:12 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -40,7 +40,12 @@ CREATE TABLE `userobj1` (
 --
 
 INSERT INTO `userobj1` (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES
-(9, 0, 0, 0, '0');
+(11, 0, 0, 0, '0'),
+(9, 1, 0, 0, '0'),
+(14, 1, 0, 0, '0'),
+(15, 0, 0, 1, '0'),
+(10, 1, 0, 0, '0'),
+(25, 0, 0, 1, '0');
 
 -- --------------------------------------------------------
 
@@ -69,6 +74,14 @@ CREATE TABLE `userobj8` (
   `bookmarkedBlog` int(11) DEFAULT NULL,
   `reportedBlog` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `userobj8`
+--
+
+INSERT INTO `userobj8` (`visitedBlog`, `upvotedBlog`, `downvotedBlog`, `bookmarkedBlog`, `reportedBlog`) VALUES
+(9, 1, 0, 0, 0),
+(10, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 

@@ -42,20 +42,26 @@
                         
                         include("dashboard.php");
                         
-                }   if(isset($_GET['insert_blog'])){
+                    }   if(isset($_GET['insert_blog'])){
                         
                         include("insert_blog.php");
                         
-                }   if(isset($_GET['view_blog'])){
+                    }   if(isset($_GET['edit_blog'])){
                         
-                        include("view_blog.php");
+                        include("edit_blog.php");
                         
-                 }   if(isset($_GET['featured_blog'])){
+                    }   if(isset($_GET['featured_blog'])){
                         
                         include("featured_blog.php");
                     
-                } 
+                    }   if(isset($_GET['delete_blog'])){
+                        
+                    include("delete_blog.php");
                 
+                    } 
+
+                    chmod("../admin_blog_post/index.php", 0777);
+                    chmod("../admin_blog_post/delete_blog.php", 0777);
         
                 ?>
                 
