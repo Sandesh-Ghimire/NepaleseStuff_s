@@ -1,4 +1,3 @@
 # Nepalese Stuff
 
-This website is a dedicated platform for accessing information about "Nepalese Stuff". The website is an attempt to introducing Nepal in the global arena.
-Any suggestions or edit regarding the website will be highly appreciated. Warm Regards.
+This site is a dedicated platform meticulously designed to provide deep insights into the world of "Nepalese Wonders". With the goal of spotlighting Nepal globally, it seamlessly blends HTML, CSS, JavaScript, jQuery, Bootstrap, PHP, and SQL. Beyond just a web presence, its purpose is to vividly showcase Nepal's richness to the world.
